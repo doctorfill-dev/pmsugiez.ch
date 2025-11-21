@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabinet Médical - Sugiez</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <h1>Cabinet Médical Sugiez</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Soins de proximité, simples et professionnels</h2>
+                <a href="https://www.onedoc.ch/en/medical-practice/sugiez/ebckh/pm-sugiez-sa"
+                   class="btn-primary" target="_blank" rel="noopener noreferrer">
+                    Prendre rendez‑vous
+                </a>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-info">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-details">
+                        <h2>Contact</h2>
+                        <div class="contact-list">
+                            <div class="contact-item">
+                                <span class="icon"><i class="fa-solid fa-map-pin" aria-hidden="true"></i></span>
+                                <div>
+                                    <strong>Adresse</strong>
+                                    <p>Rue de l'Hôpital 1<br>1786 Sugiez</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <span class="icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></span>
+                                <div>
+                                    <strong>Téléphone</strong>
+                                    <p><a href="tel:+41261234567">+41 26 123 45 67</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <span class="icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+                                <div>
+                                    <strong>Email</strong>
+                                    <p><a href="mailto:contact@cabinet-sugiez.ch">contact@cabinet-sugiez.ch</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-map">
+                        <!-- Google Maps embed (search query) -->
+                        <iframe
+                            src="https://maps.google.com/maps?q=Rue%20de%20l%27H%C3%B4pital%201%2C%201786%20Sugiez&z=15&output=embed"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            aria-label="Carte indiquant l'emplacement du cabinet"
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="doctors" class="doctors">
+            <div class="container">
+                <h2>Notre équipe médicale</h2>
+                <div class="doctors-grid" id="doctorsGrid"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Cabinet Médical Sugiez. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
