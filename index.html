@@ -4,32 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cabinet Médical - Sugiez</title>
+    <link rel="icon" type="image/png" href="logo-pmsugiez.png">
+    <link rel="apple-touch-icon" href="logo-pmsugiez.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
         <div class="container header-inner">
-            <h1>Cabinet Médical Sugiez</h1>
+            <div class="logo-container">
+                <img src="logo-pmsugiez.png" alt="Logo Cabinet Médical Sugiez" class="logo">
+                <span class="logo-text">Cabinet Médical Sugiez</span>
+            </div>
+            <nav class="main-nav">
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#doctors" class="nav-link">Équipe</a>
+                <a href="https://www.onedoc.ch/en/medical-practice/sugiez/ebckh/pm-sugiez-sa"
+                   class="nav-link nav-cta" target="_blank" rel="noopener noreferrer">
+                    Rendez-vous
+                </a>
+            </nav>
         </div>
     </header>
 
     <main>
         <section class="hero">
-            <div class="container">
-                <h2>Soins de proximité, simples et professionnels</h2>
-                <a href="https://www.onedoc.ch/en/medical-practice/sugiez/ebckh/pm-sugiez-sa"
-                   class="btn-primary" target="_blank" rel="noopener noreferrer">
-                    Prendre rendez‑vous
-                </a>
+            <div class="container hero-content">
+                <p class="hero-eyebrow">Votre santé, notre priorité</p>
+                <h1 class="hero-title">Soins de proximité,<br>simples et professionnels</h1>
+                <p class="hero-subtitle">Des médecins dévoués à votre service dans un cadre moderne et accueillant</p>
+                <div class="hero-actions">
+                    <a href="https://www.onedoc.ch/en/medical-practice/sugiez/ebckh/pm-sugiez-sa"
+                       class="btn-primary" target="_blank" rel="noopener noreferrer">
+                        <span>Prendre rendez‑vous</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn-secondary">
+                        Nous contacter
+                    </a>
+                </div>
             </div>
         </section>
 
         <section id="contact" class="contact-info">
             <div class="container">
+                <div class="section-header">
+                    <p class="section-eyebrow">Restez en contact</p>
+                    <h2 class="section-title">Comment nous joindre</h2>
+                </div>
                 <div class="contact-grid">
                     <div class="contact-details">
-                        <h2>Contact</h2>
                         <div class="contact-list">
                             <div class="contact-item">
                                 <span class="icon"><i class="fa-solid fa-map-pin" aria-hidden="true"></i></span>
@@ -54,11 +78,18 @@
                                     <p><a href="mailto:contact@cabinet-sugiez.ch">contact@cabinet-sugiez.ch</a></p>
                                 </div>
                             </div>
+
+                            <div class="contact-item">
+                                <span class="icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></span>
+                                <div>
+                                    <strong>Horaires</strong>
+                                    <p>Lun-Ven: 8h00 - 18h00<br>Sam: 9h00 - 12h00</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="contact-map">
-                        <!-- Google Maps embed (search query) -->
                         <iframe
                             src="https://maps.google.com/maps?q=Rue%20de%20l%27H%C3%B4pital%201%2C%201786%20Sugiez&z=15&output=embed"
                             loading="lazy"
@@ -72,14 +103,20 @@
 
         <section id="doctors" class="doctors">
             <div class="container">
-                <h2>Notre équipe médicale</h2>
+                <div class="section-header">
+                    <p class="section-eyebrow">Expertise médicale</p>
+                    <h2 class="section-title">Notre équipe médicale</h2>
+                </div>
                 <div class="doctors-grid" id="doctorsGrid"></div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="container">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="logo-pmsugiez.png" alt="Logo" class="footer-logo-img">
+            </div>
             <p>&copy; 2025 Cabinet Médical Sugiez. Tous droits réservés.</p>
         </div>
     </footer>
