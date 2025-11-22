@@ -242,4 +242,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Écouter le scroll
     window.addEventListener('scroll', handleHeaderScroll);
     handleHeaderScroll(); // Vérifier l'état initial
-});
+})
