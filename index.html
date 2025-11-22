@@ -3,124 +3,467 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cabinet Médical - Sugiez</title>
-    <link rel="icon" type="image/png" href="logo-pmsugiez.png">
-    <link rel="apple-touch-icon" href="logo-pmsugiez.png">
+    <title>PM Sugiez - Centre Médical</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="logo-pmsugiez.ico" type="image/x-icon">
+
 </head>
 <body>
+    <!-- Header avec Navigation -->
     <header>
-        <div class="container header-inner">
-            <div class="logo-container">
-                <img src="logo-pmsugiez.png" alt="Logo Cabinet Médical Sugiez" class="logo">
-                <span class="logo-text">Cabinet Médical Sugiez</span>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="logo-pmsugiez.png" alt="PM Sugiez Logo">
+                    <span>PM Sugiez</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#accueil" class="nav-link active">Accueil</a></li>
+                    <li><a href="#a-propos" class="nav-link">À propos</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#equipe" class="nav-link">Équipe</a></li>
+                    <li><a href="#formulaire" class="nav-link">Formulaire</a></li>
+                    <li><a href="#assurance" class="nav-link">Assurance</a></li>
+                    <li><a href="#localisation" class="nav-link">Localisation</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-            <nav class="main-nav">
-                <a href="#contact" class="nav-link">Contact</a>
-                <a href="#doctors" class="nav-link">Équipe</a>
-                <a href="https://www.onedoc.ch/en/medical-practice/sugiez/ebckh/pm-sugiez-sa"
-                   class="nav-link nav-cta" target="_blank" rel="noopener noreferrer">
-                    Rendez-vous
-                </a>
-            </nav>
-        </div>
+        </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="container hero-content">
-                <p class="hero-eyebrow">Votre santé, notre priorité</p>
-                <h1 class="hero-title">Soins de proximité,<br>simples et professionnels</h1>
-                <p class="hero-subtitle">Des médecins dévoués à votre service dans un cadre moderne et accueillant</p>
-                <div class="hero-actions">
-                    <a href="https://www.onedoc.ch/en/medical-practice/sugiez/ebckh/pm-sugiez-sa"
-                       class="btn-primary" target="_blank" rel="noopener noreferrer">
-                        <span>Prendre rendez‑vous</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                    <a href="#contact" class="btn-secondary">
-                        Nous contacter
-                    </a>
+    <!-- Section Accueil -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>Bienvenue au Pôle Médical de Sugiez</h1>
+            <p>Votre santé, notre priorité - Alliance de médecine progressiste et soins traditionnels</p>
+            <a href="#contact" class="btn-primary">Prendre rendez-vous</a>
+        </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section id="a-propos" class="section">
+        <div class="container">
+            <h2>À propos de notre centre</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&h=600&fit=crop" alt="Centre Médical PM Sugiez">
+                </div>
+                <div class="about-text">
+                    <h3>Médecine progressiste et soins traditionnels</h3>
+                    <p>Le Centre Médical PM Sugiez combine l'excellence de la <strong>médecine progressiste</strong> avec la sagesse des <strong>soins traditionnels</strong>. Notre approche intégrative vous garantit des traitements innovants tout en respectant les méthodes éprouvées.</p>
+                    <p>Nous croyons en une médecine personnalisée qui s'adapte à vos besoins spécifiques. Notre équipe expérimentée utilise les dernières technologies médicales tout en valorisant l'écoute et le rapport humain.</p>
+                    <ul class="about-features">
+                        <li><i class="fa-solid fa-check"></i> Approche holistique et personnalisée</li>
+                        <li><i class="fa-solid fa-check"></i> Équipements médicaux de pointe</li>
+                        <li><i class="fa-solid fa-check"></i> Équipe pluridisciplinaire expérimentée</li>
+                        <li><i class="fa-solid fa-check"></i> Suivi continu et préventif</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contact" class="contact-info">
-            <div class="container">
-                <div class="section-header">
-                    <p class="section-eyebrow">Restez en contact</p>
-                    <h2 class="section-title">Comment nous joindre</h2>
+    <!-- Section Services / Spécialisations -->
+    <section id="services" class="section bg-light">
+        <div class="container">
+            <h2>Nos Services et Spécialisations</h2>
+            <p class="section-subtitle">Une gamme complète de prestations médicales pour toute la famille</p>
+
+            <div class="specializations">
+                <div class="spec-card">
+                    <div class="spec-icon"><i class="fa-solid fa-user-doctor"></i></div>
+                    <h3>Médecin de Famille</h3>
+                    <p>Consultations générales, suivi médical complet, prévention et soins pour toute la famille.</p>
                 </div>
-                <div class="contact-grid">
-                    <div class="contact-details">
-                        <div class="contact-list">
-                            <div class="contact-item">
-                                <span class="icon"><i class="fa-solid fa-map-pin" aria-hidden="true"></i></span>
-                                <div>
-                                    <strong>Adresse</strong>
-                                    <p>Rue de l'Hôpital 1<br>1786 Sugiez</p>
-                                </div>
-                            </div>
+                <div class="spec-card">
+                    <div class="spec-icon"><i class="fa-solid fa-person-running"></i></div>
+                    <h3>Médecine du Sport</h3>
+                    <p>Examens sportifs, prévention des blessures, réhabilitation et optimisation des performances.</p>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-icon"><i class="fa-solid fa-baby"></i></div>
+                    <h3>Pédiatrie</h3>
+                    <p>Soins spécialisés pour enfants et adolescents, vaccinations, suivi de croissance.</p>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-icon"><i class="fa-solid fa-stethoscope"></i></div>
+                    <h3>Médecine Interne</h3>
+                    <p>Diagnostic et traitement des maladies chroniques, gestion des pathologies complexes.</p>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <h3>Cardiologie</h3>
+                    <p>Examens cardiovasculaires, ECG, monitoring et prévention des maladies cardiaques.</p>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-icon"><i class="fa-solid fa-shield-heart"></i></div>
+                    <h3>Médecine Préventive</h3>
+                    <p>Bilans de santé, dépistages, conseils en nutrition et hygiène de vie.</p>
+                </div>
+            </div>
 
-                            <div class="contact-item">
-                                <span class="icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></span>
-                                <div>
-                                    <strong>Téléphone</strong>
-                                    <p><a href="tel:+41261234567">+41 26 123 45 67</a></p>
-                                </div>
-                            </div>
+            <h3 class="prestations-title">Prestations Disponibles</h3>
+            <div class="prestations">
+                <div class="prestation-item">
+                    <h4><i class="fa-solid fa-flask"></i> Laboratoire</h4>
+                    <p>Analyses sanguines, tests urinaires, prélèvements sur place avec résultats rapides.</p>
+                </div>
+                <div class="prestation-item">
+                    <h4><i class="fa-solid fa-syringe"></i> Vaccinations</h4>
+                    <p>Tous types de vaccins, conseils pour voyages, mise à jour du carnet de vaccination.</p>
+                </div>
+                <div class="prestation-item">
+                    <h4><i class="fa-solid fa-file-medical"></i> Certificats Médicaux</h4>
+                    <p>Certificats pour sport, travail, école, permis de conduire.</p>
+                </div>
+                <div class="prestation-item">
+                    <h4><i class="fa-solid fa-hand-holding-medical"></i> Soins Infirmiers</h4>
+                    <p>Pansements, injections, prises de sang, soins post-opératoires.</p>
+                </div>
+                <div class="prestation-item">
+                    <h4><i class="fa-solid fa-chart-line"></i> Examens Complémentaires</h4>
+                    <p>ECG, spirométrie, tests d'effort, monitoring ambulatoire.</p>
+                </div>
+                <div class="prestation-item">
+                    <h4><i class="fa-solid fa-prescription-bottle-medical"></i> Prescriptions</h4>
+                    <p>Ordonnances électroniques, renouvellements, conseils pharmaceutiques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                            <div class="contact-item">
-                                <span class="icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
-                                <div>
-                                    <strong>Email</strong>
-                                    <p><a href="mailto:contact@cabinet-sugiez.ch">contact@cabinet-sugiez.ch</a></p>
-                                </div>
-                            </div>
+    <!-- Section Prises en Charge -->
+    <section class="section prise-en-charge">
+        <div class="container">
+            <h2>Prises en Charge</h2>
+            <div class="prise-content">
+                <div class="prise-card">
+                    <h3>Consultations Couvertes</h3>
+                    <ul>
+                        <li>Consultations générales et spécialisées</li>
+                        <li>Urgences médicales</li>
+                        <li>Soins préventifs et dépistages</li>
+                        <li>Suivi des maladies chroniques</li>
+                        <li>Certificats médicaux de base</li>
+                    </ul>
+                </div>
+                <div class="prise-card">
+                    <h3>Prestations Additionnelles</h3>
+                    <ul>
+                        <li>Médecine du sport (examens sportifs)</li>
+                        <li>Médecine du voyage (vaccinations spécifiques)</li>
+                        <li>Certificats médicaux spéciaux</li>
+                        <li>Examens complémentaires à la demande</li>
+                        <li>Consultations de confort</li>
+                    </ul>
+                </div>
+                <div class="prise-info">
+                    <p><strong>Important :</strong> La plupart des prestations sont couvertes par l'assurance de base LAMal. Certains examens spécifiques peuvent nécessiter une assurance complémentaire. Nous vous conseillons volontiers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                            <div class="contact-item">
-                                <span class="icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></span>
-                                <div>
-                                    <strong>Horaires</strong>
-                                    <p>Lun-Ven: 8h00 - 18h00<br>Sam: 9h00 - 12h00</p>
-                                </div>
-                            </div>
+    <!-- Section Équipe -->
+    <section id="equipe" class="section bg-light">
+        <div class="container">
+            <h2>Notre Équipe Médicale</h2>
+            <p class="section-subtitle">Des professionnels dévoués à votre service</p>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop" alt="Dr. Martin Dubois">
+                    </div>
+                    <h3>Dr. Martin Dubois</h3>
+                    <p class="member-title">Médecin de Famille</p>
+                    <p class="member-desc">Spécialiste en médecine générale avec 15 ans d'expérience.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop" alt="Dr. Sophie Laurent">
+                    </div>
+                    <h3>Dr. Sophie Laurent</h3>
+                    <p class="member-title">Médecin du Sport</p>
+                    <p class="member-desc">Experte en traumatologie sportive et médecine de performance.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop" alt="Dr. Jean Mercier">
+                    </div>
+                    <h3>Dr. Jean Mercier</h3>
+                    <p class="member-title">Pédiatre</p>
+                    <p class="member-desc">Spécialisé dans les soins aux enfants et adolescents.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://images.unsplash.com/photo-1638202993928-7267aad84c31?w=400&h=400&fit=crop" alt="Marie Perret">
+                    </div>
+                    <h3>Marie Perret</h3>
+                    <p class="member-title">Infirmière Diplômée</p>
+                    <p class="member-desc">Responsable des soins infirmiers et prélèvements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Formulaire / Demande Dossiers Médicaux -->
+    <section id="formulaire" class="section">
+        <div class="container">
+            <h2>Formulaires et Demandes</h2>
+
+            <div class="forms-container">
+                <!-- Demande de Dossiers Médicaux -->
+                <div class="form-section">
+                    <h3><i class="fa-solid fa-folder-open"></i> Demande de Dossiers Médicaux</h3>
+                    <p>Vous souhaitez obtenir une copie de votre dossier médical ? Remplissez ce formulaire.</p>
+                    <form class="medical-form" id="dossierForm">
+                        <div class="form-group">
+                            <label for="nom">Nom *</label>
+                            <input type="text" id="nom" name="nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="prenom">Prénom *</label>
+                            <input type="text" id="prenom" name="prenom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dateNaissance">Date de naissance *</label>
+                            <input type="date" id="dateNaissance" name="dateNaissance" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telephone">Téléphone *</label>
+                            <input type="tel" id="telephone" name="telephone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="typeDemande">Type de demande *</label>
+                            <select id="typeDemande" name="typeDemande" required>
+                                <option value="">Sélectionnez...</option>
+                                <option value="dossier-complet">Dossier médical complet</option>
+                                <option value="radiographies">Radiographies</option>
+                                <option value="resultats-analyses">Résultats d'analyses</option>
+                                <option value="rapports-specialistes">Rapports de spécialistes</option>
+                                <option value="autres">Autres documents</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="periode">Période concernée</label>
+                            <input type="text" id="periode" name="periode" placeholder="Ex: 2023-2024">
+                        </div>
+                        <div class="form-group">
+                            <label for="motif">Motif de la demande *</label>
+                            <textarea id="motif" name="motif" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Envoyer la demande</button>
+                    </form>
+                </div>
+
+                <!-- Prise de Rendez-vous en ligne -->
+                <div class="form-section rdv-section">
+                    <h3><i class="fa-solid fa-calendar-check"></i> Prise de Rendez-vous</h3>
+                    <p>Prenez rendez-vous en ligne facilement et rapidement via la plateforme OneDoc.</p>
+                    <div class="rdv-info">
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Disponibilité en temps réel</li>
+                            <li><i class="fa-solid fa-check"></i> Choix du médecin et du créneau</li>
+                            <li><i class="fa-solid fa-check"></i> Confirmation immédiate</li>
+                            <li><i class="fa-solid fa-check"></i> Rappel automatique</li>
+                        </ul>
+                    </div>
+                    <a href="https://www.onedoc.ch/en/medical-practice/sugiez/ebckh/pm-sugiez-sa" target="_blank" class="btn-primary btn-large">
+                        <i class="fa-solid fa-calendar-plus"></i> Réserver mon rendez-vous
+                    </a>
+                    <p class="rdv-note">Vous serez redirigé vers une plateforme sécurisée de prise de rendez-vous.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Assurance -->
+    <section id="assurance" class="section bg-light">
+        <div class="container">
+            <h2>Assurances et Tarification</h2>
+
+            <div class="insurance-content">
+                <div class="insurance-card">
+                    <h3><i class="fa-solid fa-hospital"></i> Assurance de Base LAMal</h3>
+                    <p>Nous sommes conventionnés avec toutes les caisses maladie suisses. Les prestations suivantes sont couvertes par l'assurance de base :</p>
+                    <ul>
+                        <li>Consultations médicales générales</li>
+                        <li>Traitements et soins médicaux nécessaires</li>
+                        <li>Médicaments prescrits (selon liste)</li>
+                        <li>Analyses de laboratoire prescrites</li>
+                        <li>Vaccinations recommandées</li>
+                    </ul>
+                </div>
+
+                <div class="insurance-card">
+                    <h3><i class="fa-solid fa-plus"></i> Assurances Complémentaires</h3>
+                    <p>Certaines prestations peuvent nécessiter une assurance complémentaire :</p>
+                    <ul>
+                        <li>Médecine du sport (examens sportifs)</li>
+                        <li>Médecine alternative et complémentaire</li>
+                        <li>Vaccinations pour voyages</li>
+                        <li>Certificats médicaux non obligatoires</li>
+                        <li>Consultations de confort</li>
+                    </ul>
+                </div>
+
+                <div class="insurance-card">
+                    <h3><i class="fa-solid fa-credit-card"></i> Modes de Paiement</h3>
+                    <p>Nous acceptons les modes de paiement suivants :</p>
+                    <ul>
+                        <li>Carte d'assurance (tiers payant)</li>
+                        <li>Cartes de crédit (Visa, Mastercard)</li>
+                        <li>TWINT</li>
+                        <li>Espèces</li>
+                        <li>Facture (sur demande)</li>
+                    </ul>
+                </div>
+
+                <div class="insurance-info">
+                    <p><strong>Note importante :</strong> Pensez à apporter votre carte d'assurance à chaque consultation. En cas de doute sur la couverture d'une prestation, n'hésitez pas à nous contacter.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Localisation -->
+    <section id="localisation" class="section">
+        <div class="container">
+            <h2>Localisation et Accès</h2>
+
+            <div class="location-content">
+                <div class="location-info">
+                    <h3><i class="fa-solid fa-location-dot"></i> Adresse</h3>
+                    <p><strong>Centre Médical PM Sugiez</strong><br>
+                    Rte du Péage 16A<br>
+                    1786 Sugiez<br>
+                    Suisse</p>
+
+                    <h3><i class="fa-solid fa-car"></i> Comment nous trouver</h3>
+                    <ul>
+                        <li><strong>En voiture :</strong> Parking gratuit disponible devant le centre</li>
+                        <li><strong>En transports publics :</strong> Arrêt de bus "Sugiez, Centre" à 2 minutes</li>
+                        <li><strong>À vélo :</strong> Stationnement vélos couvert</li>
+                    </ul>
+
+                    <h3><i class="fa-solid fa-wheelchair"></i> Accessibilité</h3>
+                    <p>Notre centre est entièrement accessible aux personnes à mobilité réduite.</p>
+                </div>
+
+                <div class="location-map">
+                    <div class="map-placeholder">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d680.7084178129998!2d7.118715928551715!3d46.964957913419646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e1340ba5118e9%3A0x5e6d17548ccaa8ba!2sPM%20Sugiez%20SA!5e0!3m2!1sen!2sch!4v1763820555510!5m2!1sen!2sch" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                            width="100%"
+                            height="400"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <h2>Contact</h2>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Heures d'Ouverture</h3>
+                    <div class="hours">
+                        <div class="hour-row">
+                            <span>Lundi - Vendredi</span>
+                            <span>08:00 - 12:00 | 14:00 - 18:00</span>
+                        </div>
+                        <div class="hour-row">
+                            <span>Samedi</span>
+                            <span>09:00 - 12:00</span>
+                        </div>
+                        <div class="hour-row">
+                            <span>Dimanche</span>
+                            <span>Fermé</span>
                         </div>
                     </div>
 
-                    <div class="contact-map">
-                        <iframe
-                            src="https://maps.google.com/maps?q=Rue%20de%20l%27H%C3%B4pital%201%2C%201786%20Sugiez&z=15&output=embed"
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                            aria-label="Carte indiquant l'emplacement du cabinet"
-                        ></iframe>
+                    <h3>Coordonnées</h3>
+                    <div class="contact-details">
+                        <p><i class="fa-solid fa-phone"></i> <strong>Téléphone :</strong> <a href="tel:+41261234567">+41 26 123 45 67</a></p>
+                        <p><i class="fa-solid fa-fax"></i> <strong>Fax :</strong> +41 26 123 45 68</p>
+                        <p><i class="fa-solid fa-envelope"></i> <strong>Email :</strong> <a href="mailto:info@pmsugiez.ch">info@pmsugiez.ch</a></p>
                     </div>
+
+                    <h3>Urgences</h3>
+                    <p class="urgence-info">En cas d'urgence en dehors des heures d'ouverture, appelez le <strong>144</strong> ou contactez le service de garde.</p>
+                </div>
+
+                <div class="contact-form-container">
+                    <h3>Envoyez-nous un message</h3>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="contactNom" placeholder="Votre nom *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="contactEmail" placeholder="Votre email *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="sujet" placeholder="Sujet *" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="contactMessage" rows="5" placeholder="Votre message *" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Envoyer</button>
+                    </form>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="doctors" class="doctors">
-            <div class="container">
-                <div class="section-header">
-                    <p class="section-eyebrow">Expertise médicale</p>
-                    <h2 class="section-title">Notre équipe médicale</h2>
-                </div>
-                <div class="doctors-grid" id="doctorsGrid"></div>
-            </div>
-        </section>
-    </main>
-
+    <!-- Footer -->
     <footer>
-        <div class="container footer-content">
-            <div class="footer-logo">
-                <img src="logo-pmsugiez.png" alt="Logo" class="footer-logo-img">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Centre Médical PM Sugiez</h4>
+                    <p>Votre santé, notre priorité</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="#a-propos">À propos</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#equipe">Équipe</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p><i class="fa-solid fa-phone"></i> +41 26 123 45 67</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@pmsugiez.ch</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Route Principale 42, 1786 Sugiez</p>
+                </div>
             </div>
-            <p>&copy; 2025 Cabinet Médical Sugiez. Tous droits réservés.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Centre Médical PM Sugiez. Tous droits réservés.</p>
+            </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+

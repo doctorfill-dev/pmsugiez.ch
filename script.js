@@ -56,53 +56,181 @@ function handleHeaderScroll() {
     }
 }
 
-// Intersection Observer pour les animations au scroll
-function setupScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
-    };
+// Navigation mobile
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+const navLinks = document.querySelectorAll('.nav-link');
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
 
-    // Observer les éléments à animer
-    const animatedElements = document.querySelectorAll('.contact-item, .section-header');
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
+    // Animation du hamburger
+    const spans = hamburger.querySelectorAll('span');
+    if (navMenu.classList.contains('active')) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+    } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+    }
+});
+
+// Fermer le menu mobile lors du clic sur un lien
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        const spans = hamburger.querySelectorAll('span');
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+    });
+});
+
+// Smooth scroll pour les liens d'ancrage
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const headerOffset = 80;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Activer le lien de navigation actif lors du scroll
+window.addEventListener('scroll', () => {
+    let current = '';
+    const sections = document.querySelectorAll('section');
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - 100)) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Gestion du formulaire de demande de dossiers médicaux
+const dossierForm = document.getElementById('dossierForm');
+if (dossierForm) {
+    dossierForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Récupération des données
+        const formData = new FormData(dossierForm);
+        const data = Object.fromEntries(formData);
+
+        // Simulation d'envoi (à remplacer par un vrai appel API)
+        console.log('Demande de dossier médical:', data);
+
+        // Message de confirmation
+        alert('Votre demande de dossier médical a été envoyée avec succès. Nous vous répondrons dans les plus brefs délais.');
+
+        // Réinitialiser le formulaire
+        dossierForm.reset();
     });
 }
 
-// Smooth scroll pour les ancres
-function setupSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href === '#') return;
+// Gestion du formulaire de rendez-vous
+const rdvForm = document.getElementById('rdvForm');
+if (rdvForm) {
+    rdvForm.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                const headerOffset = 80;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        // Récupération des données
+        const formData = new FormData(rdvForm);
+        const data = Object.fromEntries(formData);
 
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
+        // Simulation d'envoi (à remplacer par un vrai appel API)
+        console.log('Demande de rendez-vous:', data);
+
+        // Message de confirmation
+        alert('Votre demande de rendez-vous a été envoyée avec succès. Nous vous contacterons rapidement pour confirmer.');
+
+        // Réinitialiser le formulaire
+        rdvForm.reset();
     });
+}
+
+// Gestion du formulaire de contact
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Récupération des données
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData);
+
+        // Simulation d'envoi (à remplacer par un vrai appel API)
+        console.log('Message de contact:', data);
+
+        // Message de confirmation
+        alert('Votre message a été envoyé avec succès. Nous vous répondrons rapidement.');
+
+        // Réinitialiser le formulaire
+        contactForm.reset();
+    });
+}
+
+// Animation au scroll pour les cartes
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observer les éléments à animer
+document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('.spec-card, .prestation-item, .team-member, .prise-card, .insurance-card');
+
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+});
+
+// Validation des dates pour le formulaire de rendez-vous
+const datePreferee = document.getElementById('datePreferee');
+if (datePreferee) {
+    // Définir la date minimum à aujourd'hui
+    const today = new Date().toISOString().split('T')[0];
+    datePreferee.setAttribute('min', today);
+}
+
+// Validation de la date de naissance
+const dateNaissance = document.getElementById('dateNaissance');
+if (dateNaissance) {
+    // Définir la date maximum à aujourd'hui
+    const today = new Date().toISOString().split('T')[0];
+    dateNaissance.setAttribute('max', today);
 }
 
 // Initialisation
