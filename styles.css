@@ -990,35 +990,68 @@ body {
         display: flex;
     }
 
+    /* Optimisation du hero pour mobile - tout sur un écran */
     .hero {
-        padding: 100px 20px 60px;
-        min-height: 90vh;
+        padding: 80px 16px 20px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero-content {
+        padding: 0;
     }
 
     .hero h1 {
-        font-size: 40px;
+        font-size: 32px;
+        margin-bottom: 12px;
+        line-height: 1.2;
     }
 
     .hero-subtitle {
-        font-size: 18px;
+        font-size: 16px;
+        margin-bottom: 20px;
     }
 
     .hero-buttons {
         flex-direction: column;
-        margin-bottom: 30px;
+        margin-bottom: 24px;
+        gap: 10px;
     }
 
     .btn {
         width: 100%;
+        padding: 12px 24px;
+        font-size: 15px;
     }
 
     .quick-access-hero {
         flex-direction: column;
         width: 100%;
+        gap: 10px;
+        margin-top: 24px;
     }
 
     .quick-card-hero {
         width: 100%;
+        padding: 16px 20px;
+        min-width: auto;
+    }
+
+    .quick-card-hero .quick-icon {
+        font-size: 28px;
+        margin-bottom: 6px;
+    }
+
+    .quick-card-hero h3 {
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    /* Réduire l'indicateur de scroll */
+    .scroll-indicator {
+        display: none;
     }
 
     .section {
@@ -1072,18 +1105,60 @@ body {
     }
 }
 
-/* ============================================
-   SMOOTH SCROLLING & ACCESSIBILITY
-   ============================================ */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+/* Media query supplémentaire pour les très petits écrans */
+@media (max-width: 480px) {
+    .hero {
+        padding: 70px 12px 16px;
     }
-}
 
-:focus-visible {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
+    .hero h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+        margin-bottom: 16px;
+    }
+
+    .hero-buttons {
+        margin-bottom: 20px;
+        gap: 8px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .quick-access-hero {
+        gap: 8px;
+        margin-top: 20px;
+    }
+
+    .quick-card-hero {
+        padding: 14px 16px;
+    }
+
+    .quick-card-hero .quick-icon {
+        font-size: 24px;
+        margin-bottom: 4px;
+    }
+
+    .quick-card-hero h3 {
+        font-size: 14px;
+    }
+
+    /* Réduire la hauteur de la navbar */
+    .nav-container {
+        height: 56px;
+    }
+
+    .nav-logo {
+        font-size: 18px;
+    }
+
+    .nav-logo img {
+        height: 32px;
+    }
 }
