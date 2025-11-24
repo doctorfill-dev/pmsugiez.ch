@@ -46,26 +46,19 @@ function renderDoctors() {
     });
 }
 
-// Header scroll effect
-function handleHeaderScroll() {
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-}
-
-// Navigation mobile
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+// ============================================
+// NAVIGATION MOBILE
+// ============================================
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('navMenu');
 const navLinks = document.querySelectorAll('.nav-link');
 
-hamburger.addEventListener('click', () => {
+// Toggle menu mobile
+navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 
-    // Animation du hamburger
-    const spans = hamburger.querySelectorAll('span');
+    // Animation du bouton hamburger
+    const spans = navToggle.querySelectorAll('span');
     if (navMenu.classList.contains('active')) {
         spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
         spans[1].style.opacity = '0';
@@ -77,55 +70,83 @@ hamburger.addEventListener('click', () => {
     }
 });
 
-// Fermer le menu mobile lors du clic sur un lien
+// Fermer le menu mobile au clic sur un lien
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
-        const spans = hamburger.querySelectorAll('span');
+        const spans = navToggle.querySelectorAll('span');
         spans[0].style.transform = 'none';
         spans[1].style.opacity = '1';
         spans[2].style.transform = 'none';
     });
 });
 
-// Smooth scroll pour les liens d'ancrage
+// ============================================
+// NAVBAR SCROLL EFFECT
+// ============================================
+const navbar = document.getElementById('navbar');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > 100) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+
+    lastScroll = currentScroll;
+});
+
+// ============================================
+// SMOOTH SCROLL POUR LES ANCRES
+// ============================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const headerOffset = 80;
-            const elementPosition = target.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        const targetId = this.getAttribute('href');
+
+        if (targetId === '#') return;
+
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            const navHeight = navbar.offsetHeight;
+            const targetPosition = targetElement.offsetTop - navHeight;
 
             window.scrollTo({
-                top: offsetPosition,
+                top: targetPosition,
                 behavior: 'smooth'
             });
         }
     });
 });
 
-// Activer le lien de navigation actif lors du scroll
-window.addEventListener('scroll', () => {
-    let current = '';
-    const sections = document.querySelectorAll('section');
+// ============================================
+// HIGHLIGHT ACTIVE NAV LINK
+// ============================================
+const sections = document.querySelectorAll('section[id]');
+
+function highlightNavigation() {
+    const scrollY = window.pageYOffset;
 
     sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - 100)) {
-            current = section.getAttribute('id');
-        }
-    });
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 100;
+        const sectionId = section.getAttribute('id');
+        const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
 
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            if (navLink) {
+                navLink.classList.add('active');
+            }
         }
     });
-});
+}
+
+window.addEventListener('scroll', highlightNavigation);
 
 // Gestion du formulaire de demande de dossiers médicaux
 const dossierForm = document.getElementById('dossierForm');
@@ -169,26 +190,180 @@ if (rdvForm) {
     });
 }
 
-// Gestion du formulaire de contact
+// ============================================
+// FORMULAIRE DE CONTACT
+// ============================================
 const contactForm = document.getElementById('contactForm');
+
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
         // Récupération des données
-        const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData);
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            subject: document.getElementById('subject').value,
+            message: document.getElementById('message').value
+        };
 
-        // Simulation d'envoi (à remplacer par un vrai appel API)
-        console.log('Message de contact:', data);
+        // Simulation d'envoi (à remplacer par votre logique serveur)
+        console.log('Formulaire soumis:', formData);
 
-        // Message de confirmation
-        alert('Votre message a été envoyé avec succès. Nous vous répondrons rapidement.');
+        // Afficher un message de succès
+        showNotification('Message envoyé avec succès! Nous vous répondrons dans les plus brefs délais.', 'success');
 
         // Réinitialiser le formulaire
         contactForm.reset();
     });
 }
+
+// ============================================
+// SYSTÈME DE NOTIFICATION
+// ============================================
+function showNotification(message, type = 'success') {
+    // Créer l'élément de notification
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <span>${message}</span>
+        <button class="notification-close">&times;</button>
+    `;
+
+    // Style de la notification
+    notification.style.cssText = `
+        position: fixed;
+        top: 90px;
+        right: 24px;
+        background: ${type === 'success' ? '#34c759' : '#ff3b30'};
+        color: white;
+        padding: 16px 24px;
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        z-index: 10000;
+        animation: slideIn 0.3s ease-out;
+        max-width: 400px;
+    `;
+
+    // Style du bouton fermer
+    const closeBtn = notification.querySelector('.notification-close');
+    closeBtn.style.cssText = `
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 0;
+        line-height: 1;
+    `;
+
+    // Ajouter au DOM
+    document.body.appendChild(notification);
+
+    // Fermer au clic
+    closeBtn.addEventListener('click', () => {
+        notification.style.animation = 'slideOut 0.3s ease-out';
+        setTimeout(() => notification.remove(), 300);
+    });
+
+    // Auto-fermeture après 5 secondes
+    setTimeout(() => {
+        if (notification.parentElement) {
+            notification.style.animation = 'slideOut 0.3s ease-out';
+            setTimeout(() => notification.remove(), 300);
+        }
+    }, 5000);
+}
+
+// Ajouter les animations CSS pour les notifications
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideIn {
+        from {
+            transform: translateX(400px);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideOut {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(400px);
+            opacity: 0;
+        }
+    }
+    
+    .nav-link.active {
+        background: var(--background-alt);
+        color: var(--primary-color);
+    }
+`;
+document.head.appendChild(style);
+
+// ============================================
+// PERFORMANCE: LAZY LOADING IMAGES
+// ============================================
+if ('loading' in HTMLImageElement.prototype) {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    images.forEach(img => {
+        img.src = img.dataset.src;
+    });
+} else {
+    // Fallback pour les navigateurs plus anciens
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+    document.body.appendChild(script);
+}
+
+// ============================================
+// INITIALISATION
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('✅ Site PM Sugiez chargé avec succès');
+
+    // Vérifier si nous sommes sur mobile
+    const isMobile = window.innerWidth < 768;
+
+    if (isMobile) {
+        console.log('📱 Version mobile détectée');
+    }
+
+    // Mettre à jour l'année dans le footer
+    const yearElement = document.querySelector('.footer-bottom p');
+    if (yearElement) {
+        const currentYear = new Date().getFullYear();
+        yearElement.textContent = yearElement.textContent.replace('2025', currentYear);
+    }
+});
+
+// ============================================
+// GESTION DU REDIMENSIONNEMENT
+// ============================================
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        // Fermer le menu mobile si on passe en desktop
+        if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            const spans = navToggle.querySelectorAll('span');
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+        }
+    }, 250);
+});
 
 // Animation au scroll pour les cartes
 const observerOptions = {
