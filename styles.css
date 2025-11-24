@@ -551,6 +551,40 @@ body {
     font-weight: 500;
 }
 
+.team-appointment-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 16px;
+    padding: 14px 24px;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-weight: 500;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.team-appointment-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.team-appointment-btn i {
+    font-size: 16px;
+}
+
+#full {
+    background: var(--background-alt);
+    color: var(--text-primary);
+}
+
 /* ============================================
    SERVICES SECTION
    ============================================ */
