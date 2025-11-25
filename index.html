@@ -138,6 +138,21 @@
                         </div>
                     </div>
                 </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/500px-Unknown_person.jpg" alt="">
+                    </div>
+<!--                    todo : add all team member-->
+                    <div class="team-info">
+                        <h3>Amaëlle Bader</h3>
+                        <p class="team-role"></p>
+                        <p class="team-description"><em>Add short description</em></p>
+                        <div class="team-languages">
+                            <i class="fas fa-language"></i>
+                            <span>Français, Anglais</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -150,7 +165,7 @@
             <div class="services-grid">
                 <div class="service-card">
                     <i class="fas fa-stethoscope service-icon"></i>
-                    <h3>Consultation générale</h3>
+                    <h3>Consultation générale à partir de l'âge de 5 ans</h3>
                     <p>Examens de routine, diagnostics et suivis médicaux</p>
                 </div>
                 <div class="service-card">
@@ -164,14 +179,35 @@
                     <p>Prélèvements sanguins et analyses de laboratoire</p>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-heartbeat service-icon"></i>
-                    <h3>Prévention</h3>
-                    <p>Check-up complets et conseils de santé</p>
-                </div>
-                <div class="service-card">
                     <i class="fas fa-hospital service-icon"></i>
                     <h3>Urgences</h3>
                     <p>Prise en charge des situations urgentes</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-stethoscope service-icon"></i>
+                    <h3>Certificat OCN</h3>
+                    <p></p>
+                </div>
+<!--                todo : add right icon-->
+                <div class="service-card">
+                    <i class="fas fa-stethoscope service-icon"></i>
+                    <h3>Perfusion</h3>
+                    <p></p>
+                </div>
+                 <div class="service-card">
+                    <i class="fas fa-stethoscope service-icon"></i>
+                    <h3>ECG</h3>
+                    <p>ECG 24 heures / 7 jours</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-stethoscope service-icon"></i>
+                    <h3>MAPA</h3>
+                    <p>Mesure ambulatoire de la pression artérielle sur 24h</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-stethoscope service-icon"></i>
+                    <h3>Dépistage de l'apnée du sommeil</h3>
+                    <p></p>
                 </div>
             </div>
         </div>
@@ -260,7 +296,7 @@
                     </div>
                 </div>
                 <div class="contact-form-container">
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwpjlero" method="POST">
                         <h3>Formulaire de contact</h3>
                         <div class="form-group">
                             <label for="name"><i class="fas fa-user"></i> Nom complet *</label>
@@ -278,10 +314,10 @@
                             <label for="subject"><i class="fas fa-tag"></i> Sujet *</label>
                             <select id="subject" name="subject" required>
                                 <option value="">Sélectionnez un sujet</option>
-                                <option value="info">Demande d'information</option>
-                                <option value="prescription">Renouvellement d'ordonnance</option>
-                                <option value="info">Récupération du dossier médical</option>
-                                <option value="autre">Autre</option>
+                                <option value="Demande d'information">Demande d'information</option>
+                                <option value="Renouvellement d'ordonnance">Renouvellement d'ordonnance</option>
+                                <option value="Récupération du dossier médical">Récupération du dossier médical</option>
+                                <option value="Autre">Autre</option>
                             </select>
                         </div>
                         <div class="form-group">
