@@ -1177,10 +1177,14 @@ body {
     }
 
     .hero h1 {
-        font-size: 32px;
-        margin-bottom: 12px;
-        line-height: 1.2;
+        display: none;
     }
+
+    /*.hero h1 {*/
+    /*    font-size: 32px;*/
+    /*    margin-bottom: 12px;*/
+    /*    line-height: 1.2;*/
+    /*}*/
 
     .hero-subtitle {
         font-size: 16px;
@@ -1285,10 +1289,14 @@ body {
         padding: 70px 12px 16px;
     }
 
+    /*.hero h1 {*/
+    /*    font-size: 28px;*/
+    /*    margin-bottom: 10px;*/
+    /*}*/
     .hero h1 {
-        font-size: 28px;
-        margin-bottom: 10px;
+        display: none;
     }
+
 
     .hero-subtitle {
         font-size: 14px;
