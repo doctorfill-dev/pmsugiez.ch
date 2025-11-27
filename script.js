@@ -193,31 +193,51 @@ if (rdvForm) {
 // ============================================
 // FORMULAIRE DE CONTACT
 // ============================================
-const contactForm = document.getElementById('contactForm');
+// const contactForm = document.getElementById('contactForm');
+//
+// if (contactForm) {
+//     contactForm.addEventListener('submit', async (e) => {
+//         // e.preventDefault();
+//
+//         // Récupération des données
+//         const formData = new FormData(contactForm);
+//
+//         // Récupération du select et remplacement de la value par le texte
+//         const subjectSelect = document.getElementById('subject');
+//         console.log('Subject value avant modification:', formData.get('subject'));
+//         const subjectText = subjectSelect.options[subjectSelect.selectedIndex].text;
+//         console.log('Subject texte:', subjectText);
+//
+//         // Remplacer la valeur du subject
+//         formData.set('subject', subjectText);  // ENSUITE le modifier
+//         console.log('Subject value après modification:', formData.get('subject'));
+//
+//         console.log('Action:', contactForm.action);
+//         console.log('Subject envoyé:', subjectText);
+//
+//         try {
+//             const response = await fetch(contactForm.action, {
+//                 method: 'POST',
+//                 body: formData,
+//                 headers: {
+//                     'Accept': 'application/json'
+//                 }
+//             });
+//
+//             // // todo : ajouter un temps d'attente (~1 sec)
+//             // if (response.ok) {
+//             //     showNotification('Message envoyé avec succès! Nous vous répondrons dans les plus brefs délais.', 'success');
+//             //     contactForm.reset();
+//             // } else {
+//             //     showNotification('Une erreur est survenue. Veuillez réessayer.', 'error');
+//             // }
+//         } catch (error) {
+//             showNotification('Erreur de connexion. Veuillez réessayer plus tard.', 'error');
+//         }
+//     });
+// }
 
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
 
-        // Récupération des données
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
-            subject: document.getElementById('subject').value,
-            message: document.getElementById('message').value
-        };
-
-        // Simulation d'envoi (à remplacer par votre logique serveur)
-        console.log('Formulaire soumis:', formData);
-
-        // Afficher un message de succès
-        showNotification('Message envoyé avec succès! Nous vous répondrons dans les plus brefs délais.', 'success');
-
-        // Réinitialiser le formulaire
-        contactForm.reset();
-    });
-}
 
 // ============================================
 // SYSTÈME DE NOTIFICATION

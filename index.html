@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Font Awesome pour les icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Material Symbols   -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300" />
 </head>
 <body>
     <!-- Navigation fixe -->
@@ -35,11 +37,28 @@
     <!-- Section Hero avec accès rapide intégré -->
     <section id="accueil" class="hero">
         <div class="hero-content">
+            <!-- Badge nouveaux patients avec message clair -->
+            <div class="new-patients-badge fade-in">
+                <i class="fas fa-user-plus"></i>
+                <span>Nouveaux patients acceptés</span>
+            </div>
+
             <h1 class="fade-in">Pôle Médical de Sugiez</h1>
-            <p class="hero-subtitle fade-in">Médecine générale à Sugiez</p>
-            <div class="hero-buttons fade-in">
-                <a href="https://www.onedoc.ch/fr/cabinet-medical/sugiez/ebckh/pm-sugiez-sa" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Prendre rendez-vous</a>
-                <a href="#contact" class="btn btn-secondary">Nous contacter</a>
+
+            <!-- Call to action principal avec indication claire -->
+            <div class="hero-cta fade-in">
+                <a href="https://www.onedoc.ch/fr/cabinet-medical/sugiez/ebckh/pm-sugiez-sa" target="_blank" rel="noopener noreferrer" class="btn-appointment">
+                    <span class="btn-appointment-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </span>
+                    <span class="btn-appointment-content">
+                        <span class="btn-appointment-title">Prendre rendez-vous en ligne</span>
+                        <span class="btn-appointment-subtitle">Réponse rapide • Disponibilités en temps réel</span>
+                    </span>
+                    <span class="btn-appointment-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
+                </a>
             </div>
 
             <!-- Accès rapide intégré dans le hero -->
@@ -47,14 +66,17 @@
                 <a href="tel:+41266708330" class="quick-card-hero">
                     <i class="fas fa-phone quick-icon"></i>
                     <h3>026 670 83 30</h3>
+                    <p class="quick-card-label">Besoin d'aide ? Appelez-nous !</p>
                 </a>
                 <a href="#horaires" class="quick-card-hero">
                     <i class="far fa-clock quick-icon"></i>
                     <h3>Lun-Ven: 8h-18h</h3>
+                    <p class="quick-card-label">Horaires</p>
                 </a>
                 <a href="#contact" class="quick-card-hero">
                     <i class="fas fa-map-marker-alt quick-icon"></i>
                     <h3>Sugiez, Fribourg</h3>
+                    <p class="quick-card-label">Localisation</p>
                 </a>
             </div>
         </div>
@@ -138,6 +160,21 @@
                         </div>
                     </div>
                 </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/500px-Unknown_person.jpg" alt="">
+                    </div>
+<!--                    todo : add all team member-->
+                    <div class="team-info">
+                        <h3>Amaëlle Bader</h3>
+                        <p class="team-role"></p>
+                        <p class="team-description"><em>Add short description</em></p>
+                        <div class="team-languages">
+                            <i class="fas fa-language"></i>
+                            <span>Français, Anglais</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -149,29 +186,50 @@
             <p class="section-subtitle">Une prise en charge complète et personnalisée</p>
             <div class="services-grid">
                 <div class="service-card">
-                    <i class="fas fa-stethoscope service-icon"></i>
-                    <h3>Consultation générale</h3>
+                    <i class="material-symbols-outlined service-icon" style="font-size: 48px;">stethoscope</i>
+                    <h3>Consultation générale à partir de l'âge de 5 ans</h3>
                     <p>Examens de routine, diagnostics et suivis médicaux</p>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-syringe service-icon"></i>
+                    <i class="material-symbols-outlined service-icon" style="font-size: 48px;">vaccines</i>
                     <h3>Vaccinations</h3>
                     <p>Tous types de vaccins</p>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-vial service-icon"></i>
+                    <i class="material-symbols-outlined service-icon" style="font-size: 48px;">experiment</i>
                     <h3>Analyses</h3>
                     <p>Prélèvements sanguins et analyses de laboratoire</p>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-heartbeat service-icon"></i>
-                    <h3>Prévention</h3>
-                    <p>Check-up complets et conseils de santé</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-hospital service-icon"></i>
+                    <i class="material-symbols-outlined service-icon" style="font-size: 48px;">ambulance</i>
                     <h3>Urgences</h3>
                     <p>Prise en charge des situations urgentes</p>
+                </div>
+                <div class="service-card">
+                    <i class="material-symbols-outlined service-icon" style="font-size: 48px;">workspace_premium</i>
+                    <h3>Certificat OCN</h3>
+                    <p>Évaluation médicale nécessaire pour l’aptitude à la conduite.</p>
+                </div>
+<!--                todo : add right icon-->
+                <div class="service-card">
+                    <i class="material-symbols-outlined service-icon" style="font-size: 48px;">fluid</i>
+                    <h3>Perfusion</h3>
+                    <p>Administration intraveineuse pour hydratation ou traitement.</p>
+                </div>
+                 <div class="service-card">
+                    <i class="material-symbols-outlined service-icon" style="font-size: 48px;">ecg_heart</i>
+                    <h3>ECG</h3>
+                    <p>ECG 24 heures / 7 jours</p>
+                </div>
+                <div class="service-card">
+                    <i class="material-symbols-outlined service-icon" style="font-size: 48px;">blood_pressure</i>
+                    <h3>MAPA</h3>
+                    <p>Mesure ambulatoire de la pression artérielle sur 24 heures.</p>
+                </div>
+                <div class="service-card">
+                    <i class="material-symbols-outlined service-icon" style="font-size: 48px;">dark_mode</i>
+                    <h3>Dépistage de l'apnée du sommeil</h3>
+                    <p>Examen pour analyser la respiration durant le sommeil.</p>
                 </div>
             </div>
         </div>
@@ -260,7 +318,7 @@
                     </div>
                 </div>
                 <div class="contact-form-container">
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwpjlero" method="POST">
                         <h3>Formulaire de contact</h3>
                         <div class="form-group">
                             <label for="name"><i class="fas fa-user"></i> Nom complet *</label>
@@ -278,10 +336,10 @@
                             <label for="subject"><i class="fas fa-tag"></i> Sujet *</label>
                             <select id="subject" name="subject" required>
                                 <option value="">Sélectionnez un sujet</option>
-                                <option value="info">Demande d'information</option>
-                                <option value="prescription">Renouvellement d'ordonnance</option>
-                                <option value="info">Récupération du dossier médical</option>
-                                <option value="autre">Autre</option>
+                                <option value="Demande d'information">Demande d'information</option>
+                                <option value="Renouvellement d'ordonnance">Renouvellement d'ordonnance</option>
+                                <option value="Récupération du dossier médical">Récupération du dossier médical</option>
+                                <option value="Autre">Autre</option>
                             </select>
                         </div>
                         <div class="form-group">
