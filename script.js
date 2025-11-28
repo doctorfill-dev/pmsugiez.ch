@@ -438,3 +438,85 @@ document.addEventListener('DOMContentLoaded', () => {
     // window.addEventListener('scroll', handleHeaderScroll);
     // handleHeaderScroll(); // Vérifier l'état initial todo : supprimer car non utilisé
 })
+
+// ============================================
+// CARROUSEL AUTOMATIQUE - DR. BERTRAND CURTY
+// ============================================
+class PhotoCarousel {
+    constructor(containerId) {
+        this.container = document.getElementById(containerId);
+        if (!this.container) return;
+
+        this.slides = this.container.querySelectorAll('.carousel-slide');
+        this.dots = this.container.querySelectorAll('.dot');
+        this.currentIndex = 0;
+        this.autoplayInterval = null;
+        this.autoplayDelay = 4000; // 4 secondes entre chaque photo
+
+        this.init();
+    }
+
+    init() {
+        // Ajouter les événements aux points de navigation
+        this.dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => this.goToSlide(index));
+        });
+
+        // Démarrer le défilement automatique
+        this.startAutoplay();
+
+        // Pause au survol, reprise au départ
+        this.container.addEventListener('mouseenter', () => this.pauseAutoplay());
+        this.container.addEventListener('mouseleave', () => this.startAutoplay());
+    }
+
+    goToSlide(index) {
+        // Arrêter l'autoplay quand l'utilisateur clique
+        this.pauseAutoplay();
+
+        // Masquer la slide actuelle
+        this.slides[this.currentIndex].classList.remove('active');
+        this.dots[this.currentIndex].classList.remove('active');
+
+        // Afficher la nouvelle slide
+        this.currentIndex = index;
+        this.slides[this.currentIndex].classList.add('active');
+        this.dots[this.currentIndex].classList.add('active');
+
+        // Reprendre l'autoplay après 6 secondes de pause
+        setTimeout(() => this.startAutoplay(), 6000);
+    }
+
+    nextSlide() {
+        const nextIndex = (this.currentIndex + 1) % this.slides.length;
+
+        // Masquer la slide actuelle
+        this.slides[this.currentIndex].classList.remove('active');
+        this.dots[this.currentIndex].classList.remove('active');
+
+        // Afficher la prochaine slide
+        this.currentIndex = nextIndex;
+        this.slides[this.currentIndex].classList.add('active');
+        this.dots[this.currentIndex].classList.add('active');
+    }
+
+    startAutoplay() {
+        if (this.autoplayInterval) return; // Déjà actif
+
+        this.autoplayInterval = setInterval(() => {
+            this.nextSlide();
+        }, this.autoplayDelay);
+    }
+
+    pauseAutoplay() {
+        if (this.autoplayInterval) {
+            clearInterval(this.autoplayInterval);
+            this.autoplayInterval = null;
+        }
+    }
+}
+
+// Initialiser le carrousel au chargement du DOM
+document.addEventListener('DOMContentLoaded', () => {
+    new PhotoCarousel('bertrandCarousel');
+});
