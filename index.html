@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PM Sugiez - Cabinet Médical</title>
+    <title>PM Sugiez</title>
     <link rel="icon" type="image/x-icon" href="logo-pmsugiez.ico">
     <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome pour les icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Material Symbols   -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300" />
 </head>
 <body>
@@ -36,6 +34,18 @@
 
     <!-- Section Hero avec accès rapide intégré -->
     <section id="accueil" class="hero">
+        <!-- Vidéo de fond pour les grands écrans -->
+        <div class="hero-video-wrapper">
+            <iframe
+                class="hero-video"
+                src="https://www.youtube.com/embed/QlAZavtZ584?autoplay=1&mute=1&loop=1&playlist=QlAZavtZ584&showinfo=0&controls=0&autohide=1&mute=1"
+                title="Background video"
+                frameborder="0"
+                allow="autoplay; fullscreen"
+                allowfullscreen>
+            </iframe>
+        </div>
+
         <div class="hero-content">
             <!-- Badge nouveaux patients avec message clair -->
             <div class="new-patients-badge fade-in">
@@ -92,14 +102,22 @@
             <p class="section-subtitle">Des professionnels dévoués à votre service</p>
             <div class="team-grid">
                 <div class="team-card">
-                    <div class="team-image">
-                        <img src="images/staff/Bertrand_Curty.jpg" alt="Dr. Bertrand Curty">
+                    <div class="team-image carousel-container" id="bertrandCarousel">
+                        <div class="carousel-slides">
+                            <img src="images/staff/Bertrand_Curty-1.jpg" alt="Dr. Bertrand Curty - Photo 1" class="carousel-slide active">
+                            <img src="images/staff/Bertrand_Curty-2.jpg" alt="Dr. Bertrand Curty - Photo 2" class="carousel-slide">
+                            <img src="images/staff/Bertrand_Curty-3.jpg" alt="Dr. Bertrand Curty - Photo 3" class="carousel-slide">
+                        </div>
+                        <div class="carousel-dots">
+                            <button class="dot active" data-slide="0" aria-label="Photo 1"></button>
+                            <button class="dot" data-slide="1" aria-label="Photo 2"></button>
+                            <button class="dot" data-slide="2" aria-label="Photo 3"></button>
+                        </div>
                     </div>
                     <div class="team-info">
                         <h3>Dr. Bertrand <UPPER style="text-transform: uppercase;">Curty</UPPER></h3>
-                        <p class="team-role">Médecin généraliste</p>
-                        <p class="team-description"><em>Add short description</em></p>
-                        <p class="team-description"><em>Add short description</em></p>
+                        <p class="team-role">Médecine interne générale FMH et spécialiste en médecine du sport SSMS</p>
+<!--                        <p class="team-description"><em>Add short description</em></p>-->
                         <div class="team-languages">
                             <i class="fas fa-language"></i>
                             <span>Français, Allemand, Anglais</span>
@@ -116,8 +134,8 @@
                     </div>
                     <div class="team-info">
                         <h3>Dr. Loredana-Mihaela <UPPER style="text-transform: uppercase;">Ungureanu</UPPER></h3>
-                        <p class="team-role">Médecin généraliste</p>
-                        <p class="team-description"><em>Add short description</em></p>
+                        <p class="team-role">Médecin praticien</p>
+<!--                        <p class="team-description"><em>Add short description</em></p>-->
                         <div class="team-languages">
                             <i class="fas fa-language"></i>
                             <span>Français, Roumain, Anglais</span>
@@ -130,12 +148,12 @@
                 </div>
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/500px-Unknown_person.jpg" alt="">
+                        <img src="images/staff/Bilyana_Filipcheva.jpg" alt="">
                     </div>
                     <div class="team-info">
                         <h3>Dr. Bilyana <UPPER style="text-transform: uppercase;">Prodanova Filipcheva</UPPER></h3>
-                        <p class="team-role">Médecin généraliste</p>
-                        <p class="team-description"><em>Add short description</em></p>
+                        <p class="team-role">Médecin praticien</p>
+<!--                        <p class="team-description"><em>Add short description</em></p>-->
                         <div class="team-languages">
                             <i class="fas fa-language"></i>
                             <span>Français, Bulgare, Anglais</span>
@@ -151,9 +169,21 @@
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/500px-Unknown_person.jpg" alt="">
                     </div>
                     <div class="team-info">
+                        <h3>Amaëlle Bader</h3>
+                        <p class="team-role">Responsable de cabinet</p>
+                        <div class="team-languages">
+                            <i class="fas fa-language"></i>
+                            <span>Français</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/staff/Jessica_Curty.jpg" alt="">
+                    </div>
+                    <div class="team-info">
                         <h3>Jessica Curty</h3>
                         <p class="team-role">Secrétaire médicale</p>
-                        <p class="team-description"><em>Add short description</em></p>
                         <div class="team-languages">
                             <i class="fas fa-language"></i>
                             <span>Français, Allemand, Anglais</span>
@@ -162,13 +192,24 @@
                 </div>
                 <div class="team-card">
                     <div class="team-image">
+                        <img src="images/staff/Marina_Ferreira.jpg" alt="">
+                    </div>
+                    <div class="team-info">
+                        <h3>Marina Ferreira</h3>
+                        <p class="team-role">Assistante médicale</p>
+                        <div class="team-languages">
+                            <i class="fas fa-language"></i>
+                            <span>Français, Portugais</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/500px-Unknown_person.jpg" alt="">
                     </div>
-<!--                    todo : add all team member-->
                     <div class="team-info">
-                        <h3>Amaëlle Bader</h3>
-                        <p class="team-role"></p>
-                        <p class="team-description"><em>Add short description</em></p>
+                        <h3>Marie-Christine Guinnard</h3>
+                        <p class="team-role">Assistante médicale</p>
                         <div class="team-languages">
                             <i class="fas fa-language"></i>
                             <span>Français, Anglais</span>
@@ -301,7 +342,7 @@
                     </div>
                     <div class="contact-card">
                         <h3><i class="fas fa-envelope"></i> Email</h3>
-                        <p><a href="mailto:contact@pmsugiez.ch">contact@pmsugiez.ch</a></p>
+                        <p><a href="mailto:contact@pmsugiez.ch">pmsugiez@hin.ch</a></p>
                     </div>
 
                     <!-- Google Maps -->

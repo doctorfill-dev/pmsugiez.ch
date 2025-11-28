@@ -150,14 +150,67 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-image: url('images/outside/paysage-01.JPG');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     text-align: center;
     padding: 120px 24px 80px;
     position: relative;
+    overflow: hidden;
 }
 
+/* Overlay semi-transparent pour améliorer la lisibilité du texte */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(2px);
+    z-index: 1;
+}
+
+/* Vidéo en arrière-plan pour les grands écrans */
+/*.hero-video {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    object-fit: cover;*/
+/*    z-index: 0;*/
+/*    display: none;*/
+/*}*/
+/* todo : supprimer en haut si ça fonctionne */
+.hero-video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    display: none; /* comme ton style actuel */
+}
+
+/* todo === todo */
 .hero-content {
     max-width: 900px;
+    position: relative;
+    z-index: 2;
 }
 
 /* Badge Nouveaux Patients - Version simplifiée */
@@ -172,7 +225,7 @@ body {
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 24px;
-    box-shadow: 0 4px 16px rgba(52, 199, 89, 0.25);
+    box-shadow: 0 4px 16px rgba(52, 199, 89, 0.25), 0 0 0 0.5px rgba(0, 0, 0, 0.1);
 }
 
 .new-patients-badge i {
@@ -186,14 +239,16 @@ body {
     font-weight: 700;
     letter-spacing: -0.02em;
     margin-bottom: 20px;
-    color: var(--text-primary);
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
     font-size: clamp(20px, 3vw, 28px);
-    color: var(--text-secondary);
+    color: #ffffff;
     margin-bottom: 40px;
     font-weight: 400;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* ============================================
@@ -291,8 +346,9 @@ body {
 /* Message d'aide sous le bouton */
 .hero-cta-help {
     font-size: 14px;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.9);
     margin-top: 16px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .hero-cta-help i {
@@ -445,6 +501,12 @@ body {
 
 /* Style spécifique mobile pour indiquer le tap */
 @media (max-width: 768px) {
+    /* Image verticale pour mobile */
+    .hero {
+        background-image: url('images/outside/vertical-01.JPG');
+        background-attachment: scroll;
+    }
+
     .quick-card-hero {
         padding: 28px 36px;
         box-shadow: 0 6px 20px rgba(0, 122, 255, 0.25);
@@ -548,13 +610,14 @@ body {
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 2;
 }
 
 .scroll-indicator span {
     display: block;
     width: 24px;
     height: 36px;
-    border: 2px solid var(--text-primary);
+    border: 2px solid rgba(255, 255, 255, 0.8);
     border-radius: 12px;
     position: relative;
 }
@@ -567,7 +630,7 @@ body {
     transform: translateX(-50%);
     width: 4px;
     height: 8px;
-    background: var(--text-primary);
+    background: rgba(255, 255, 255, 0.8);
     border-radius: 2px;
     animation: scroll 2s infinite;
 }
@@ -632,6 +695,7 @@ body {
     width: 100%;
     height: 400px;
     overflow: hidden;
+    position: relative;
 }
 
 .team-image img {
@@ -644,6 +708,71 @@ body {
 .team-card:hover .team-image img {
     transform: scale(1.05);
 }
+
+/* ============================================
+   STYLES CARROUSEL - DÉFILEMENT AUTOMATIQUE
+   ============================================ */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background: var(--background-alt);
+}
+
+.carousel-slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 3;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0;
+}
+
+.dot:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+}
+
+.dot.active {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.2);
+}
+
 
 .team-info {
     padding: 32px;
@@ -1054,7 +1183,7 @@ body {
 .footer-logo img {
     height: 40px;
     margin-bottom: 16px;
-    filter: brightness(0) invert(1);
+    /*filter: brightness(0) invert(1);*/
 }
 
 .footer-logo p {
@@ -1342,5 +1471,37 @@ body {
 
     .nav-logo img {
         height: 32px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - Petit mobile (moins de 480px)
+   ============================================ */
+@media (max-width: 480px) {
+    .hero {
+        background-image: url('images/outside/vertical-02.JPG');
+    }
+}
+
+/* ============================================
+   RESPONSIVE - Tablettes (768px à 1024px)
+   ============================================ */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero {
+        background-image: url('images/outside/paysage-02.JPG');
+    }
+}
+
+/* ============================================
+   RESPONSIVE - Grands écrans (1025px et +)
+   ============================================ */
+@media (min-width: 1025px) {
+    .hero {
+        background-image: none;
+        background-color: #000;
+    }
+
+    .hero-video {
+        display: block;
     }
 }
