@@ -25,26 +25,26 @@ const doctors = [
     }
 ];
 
-function renderDoctors() {
-    const grid = document.getElementById('doctorsGrid');
-    grid.innerHTML = '';
-
-    doctors.forEach((doctor, index) => {
-        const card = document.createElement('article');
-        card.className = 'doctor-card';
-        card.setAttribute('tabindex', '0');
-        card.style.animationDelay = `${index * 0.1}s`;
-
-        card.innerHTML = `
-            <img src="${doctor.photo}" alt="Photo de ${doctor.name}" class="doctor-photo" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
-            <h3>${doctor.name}</h3>
-            <p class="doctor-specialty">${doctor.specialty}</p>
-            ${doctor.email ? `<p class="doctor-email"><a href="mailto:${doctor.email}">${doctor.email}</a></p>` : `<p class="doctor-email" style="color:#9b9b9f">Email non fourni</p>`}
-        `;
-
-        grid.appendChild(card);
-    });
-}
+// function renderDoctors() {
+//     const grid = document.getElementById('doctorsGrid');
+//     grid.innerHTML = '';
+//
+//     doctors.forEach((doctor, index) => {
+//         const card = document.createElement('article');
+//         card.className = 'doctor-card';
+//         card.setAttribute('tabindex', '0');
+//         card.style.animationDelay = `${index * 0.1}s`;
+//
+//         card.innerHTML = `
+//             <img src="${doctor.photo}" alt="Photo de ${doctor.name}" class="doctor-photo" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
+//             <h3>${doctor.name}</h3>
+//             <p class="doctor-specialty">${doctor.specialty}</p>
+//             ${doctor.email ? `<p class="doctor-email"><a href="mailto:${doctor.email}">${doctor.email}</a></p>` : `<p class="doctor-email" style="color:#9b9b9f">Email non fourni</p>`}
+//         `;
+//
+//         grid.appendChild(card);
+//     });
+// }
 
 // ============================================
 // NAVIGATION MOBILE
@@ -193,6 +193,7 @@ if (rdvForm) {
 // ============================================
 // FORMULAIRE DE CONTACT
 // ============================================
+// todo : peut être supprimé car utilisation de FormSpree
 // const contactForm = document.getElementById('contactForm');
 //
 // if (contactForm) {
@@ -224,7 +225,6 @@ if (rdvForm) {
 //                 }
 //             });
 //
-//             // // todo : ajouter un temps d'attente (~1 sec)
 //             // if (response.ok) {
 //             //     showNotification('Message envoyé avec succès! Nous vous répondrons dans les plus brefs délais.', 'success');
 //             //     contactForm.reset();
@@ -430,11 +430,11 @@ if (dateNaissance) {
 
 // Initialisation
 document.addEventListener('DOMContentLoaded', () => {
-    renderDoctors();
-    setupScrollAnimations();
-    setupSmoothScroll();
+    // renderDoctors(); todo : supprimer car non utilisé
+    // setupScrollAnimations(); todo : supprimer car non utilisé
+    // setupSmoothScroll(); todo : supprimer car non utilisé
 
     // Écouter le scroll
-    window.addEventListener('scroll', handleHeaderScroll);
-    handleHeaderScroll(); // Vérifier l'état initial
+    // window.addEventListener('scroll', handleHeaderScroll);
+    // handleHeaderScroll(); // Vérifier l'état initial todo : supprimer car non utilisé
 })
