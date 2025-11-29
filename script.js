@@ -483,8 +483,8 @@ class PhotoCarousel {
         this.slides[this.currentIndex].classList.add('active');
         this.dots[this.currentIndex].classList.add('active');
 
-        // Reprendre l'autoplay après 6 secondes de pause
-        setTimeout(() => this.startAutoplay(), 6000);
+        // Reprendre l'autoplay après 4 secondes de pause
+        setTimeout(() => this.startAutoplay(), 4000);
     }
 
     nextSlide() {
