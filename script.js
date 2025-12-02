@@ -1,56 +1,9 @@
-const doctors = [
-    {
-        name: "Dr. Marie Dubois",
-        specialty: "Médecine générale",
-        email: "marie.dubois@cabinet-sugiez.ch",
-        photo: "https://randomuser.me/api/portraits/women/68.jpg"
-    },
-    {
-        name: "Dr. Jean Martin",
-        specialty: "Pédiatrie",
-        email: "jean.martin@cabinet-sugiez.ch",
-        photo: "https://randomuser.me/api/portraits/men/45.jpg"
-    },
-    {
-        name: "Dr. Sophie Laurent",
-        specialty: "Cardiologie",
-        email: "sophie.laurent@cabinet-sugiez.ch",
-        photo: "https://randomuser.me/api/portraits/women/44.jpg"
-    },
-    {
-        name: "Dr. Lucas Bernard",
-        specialty: "Orthopédie",
-        email: "",
-        photo: "https://randomuser.me/api/portraits/men/32.jpg"
-    }
-];
-
-// function renderDoctors() {
-//     const grid = document.getElementById('doctorsGrid');
-//     grid.innerHTML = '';
-//
-//     doctors.forEach((doctor, index) => {
-//         const card = document.createElement('article');
-//         card.className = 'doctor-card';
-//         card.setAttribute('tabindex', '0');
-//         card.style.animationDelay = `${index * 0.1}s`;
-//
-//         card.innerHTML = `
-//             <img src="${doctor.photo}" alt="Photo de ${doctor.name}" class="doctor-photo" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
-//             <h3>${doctor.name}</h3>
-//             <p class="doctor-specialty">${doctor.specialty}</p>
-//             ${doctor.email ? `<p class="doctor-email"><a href="mailto:${doctor.email}">${doctor.email}</a></p>` : `<p class="doctor-email" style="color:#9b9b9f">Email non fourni</p>`}
-//         `;
-//
-//         grid.appendChild(card);
-//     });
-// }
 
 // ============================================
 // NAVIGATION MOBILE
 // ============================================
-const navToggle = document.getElementById('navToggle');
-const navMenu = document.getElementById('navMenu');
+const navToggle = document.getElementById('navToggle'); // todo encore utilisé ?
+const navMenu = document.getElementById('navMenu'); // todo encore utilisé ?
 const navLinks = document.querySelectorAll('.nav-link');
 
 // Toggle menu mobile
@@ -84,6 +37,7 @@ navLinks.forEach(link => {
 // ============================================
 // NAVBAR SCROLL EFFECT
 // ============================================
+// todo : est-ce que l'effet est encore utilisé ?
 const navbar = document.getElementById('navbar');
 let lastScroll = 0;
 
@@ -102,6 +56,7 @@ window.addEventListener('scroll', () => {
 // ============================================
 // SMOOTH SCROLL POUR LES ANCRES
 // ============================================
+// todo : est-ce que l'effet est encore utilisé ?
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -148,7 +103,7 @@ function highlightNavigation() {
 
 window.addEventListener('scroll', highlightNavigation);
 
-// Gestion du formulaire de demande de dossiers médicaux
+// Gestion du formulaire de demande de dossiers médicaux todo : encore utilisé ?
 const dossierForm = document.getElementById('dossierForm');
 if (dossierForm) {
     dossierForm.addEventListener('submit', (e) => {
@@ -169,7 +124,7 @@ if (dossierForm) {
     });
 }
 
-// Gestion du formulaire de rendez-vous
+// Gestion du formulaire de rendez-vous todo : encore utilisé ?
 const rdvForm = document.getElementById('rdvForm');
 if (rdvForm) {
     rdvForm.addEventListener('submit', (e) => {
@@ -191,57 +146,9 @@ if (rdvForm) {
 }
 
 // ============================================
-// FORMULAIRE DE CONTACT
-// ============================================
-// todo : peut être supprimé car utilisation de FormSpree
-// const contactForm = document.getElementById('contactForm');
-//
-// if (contactForm) {
-//     contactForm.addEventListener('submit', async (e) => {
-//         // e.preventDefault();
-//
-//         // Récupération des données
-//         const formData = new FormData(contactForm);
-//
-//         // Récupération du select et remplacement de la value par le texte
-//         const subjectSelect = document.getElementById('subject');
-//         console.log('Subject value avant modification:', formData.get('subject'));
-//         const subjectText = subjectSelect.options[subjectSelect.selectedIndex].text;
-//         console.log('Subject texte:', subjectText);
-//
-//         // Remplacer la valeur du subject
-//         formData.set('subject', subjectText);  // ENSUITE le modifier
-//         console.log('Subject value après modification:', formData.get('subject'));
-//
-//         console.log('Action:', contactForm.action);
-//         console.log('Subject envoyé:', subjectText);
-//
-//         try {
-//             const response = await fetch(contactForm.action, {
-//                 method: 'POST',
-//                 body: formData,
-//                 headers: {
-//                     'Accept': 'application/json'
-//                 }
-//             });
-//
-//             // if (response.ok) {
-//             //     showNotification('Message envoyé avec succès! Nous vous répondrons dans les plus brefs délais.', 'success');
-//             //     contactForm.reset();
-//             // } else {
-//             //     showNotification('Une erreur est survenue. Veuillez réessayer.', 'error');
-//             // }
-//         } catch (error) {
-//             showNotification('Erreur de connexion. Veuillez réessayer plus tard.', 'error');
-//         }
-//     });
-// }
-
-
-
-// ============================================
 // SYSTÈME DE NOTIFICATION
 // ============================================
+// todo : encore besoin du système de notification ? est-ce qu'à terme on se passe de Formspree ?
 function showNotification(message, type = 'success') {
     // Créer l'élément de notification
     const notification = document.createElement('div');
@@ -347,18 +254,9 @@ if ('loading' in HTMLImageElement.prototype) {
 }
 
 // ============================================
-// INITIALISATION
+// MAJ date
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('✅ Site PM Sugiez chargé avec succès');
-
-    // Vérifier si nous sommes sur mobile
-    const isMobile = window.innerWidth < 768;
-
-    if (isMobile) {
-        console.log('📱 Version mobile détectée');
-    }
-
     // Mettre à jour l'année dans le footer
     const yearElement = document.querySelector('.footer-bottom p');
     if (yearElement) {
