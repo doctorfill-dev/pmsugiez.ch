@@ -445,7 +445,7 @@ body {
     color: var(--primary-dark);
 }
 
-.quick-card-hero h3 {
+.quick-card-title {
     font-size: 17px;
     font-weight: 600;
     color: var(--text-primary);
@@ -453,7 +453,7 @@ body {
     transition: var(--transition);
 }
 
-.quick-card-hero:hover h3 {
+.quick-card-hero:hover .quick-card-title {
     color: var(--primary-color);
     transform: scale(1.05);
 }
