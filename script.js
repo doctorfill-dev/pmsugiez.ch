@@ -418,3 +418,17 @@ class PhotoCarousel {
 document.addEventListener('DOMContentLoaded', () => {
     new PhotoCarousel('bertrandCarousel');
 });
+
+// ============================================
+// VIDÉO DE FOND
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+    // Vidéo de fond uniquement sur grands écrans
+    if (window.innerWidth >= 1025) {
+        const heroVideo = document.querySelector('.hero-video');
+        if (heroVideo && !heroVideo.src) {
+            heroVideo.src = heroVideo.dataset.src;
+        }
+    }
+});
+

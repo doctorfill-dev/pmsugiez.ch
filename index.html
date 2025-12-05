@@ -51,16 +51,19 @@
     <!-- Section Hero avec accès rapide intégré -->
     <section id="accueil" class="hero">
         <div class="hero-video-wrapper">
-            <!-- todo : check validity of frameborder
-            Maybe check with : CSS property border to control <iframe> borders
-            -->
+            <img
+                src="images/outside/paysage-02.JPG"
+                alt=""
+                class="hero-fallback"
+            >
 
             <iframe
                 class="hero-video"
-                src="https://www.youtube.com/embed/QlAZavtZ584?autoplay=1&mute=1&loop=1&playlist=QlAZavtZ584&showinfo=0&controls=0&autohide=1&mute=1"
+                data-src="https://www.youtube.com/embed/QlAZavtZ584?autoplay=1&mute=1&loop=1&playlist=QlAZavtZ584&showinfo=0&controls=0&autohide=1"
                 title="Background video"
                 frameborder="0"
                 allow="autoplay; fullscreen"
+                loading="lazy"
                 allowfullscreen>
             </iframe>
         </div>
