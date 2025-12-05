@@ -4,449 +4,554 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PM Sugiez</title>
+
+    <!-- Favicons -->
     <link rel="icon" type="image/png" href="/favicon.png" sizes="48x48">
     <link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="/favicon-16.png" sizes="16x16">
     <link rel="icon" type="image/x-icon" href="/logo-pmsugiez.ico">
     <link rel="apple-touch-icon" href="/logo-pmsugiez.png">
-<!--    <link rel="apple-touch-icon" href="apple-touch-icon.png">-->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0TYS1C4MX">
-    </script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'G-Y0TYS1C4MX');
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Material Symbols (icônes médicales) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300&display=swap"/>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0TYS1C4MX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-Y0TYS1C4MX');
+    </script>
+    <meta name="description"
+          content="PM Sugiez – cabinet de médecine générale à Sugiez. Consultations dès 5 ans, urgences, vaccinations, analyses et dépistage, avec prise de rendez-vous en ligne via OneDoc.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalCenter",
+      "name": "PM Sugiez",
+      "image": "https://pmsugiez.ch/images/outside/paysage-02.JPG",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Route du Péage 16A",
+        "addressLocality": "Sugiez",
+        "postalCode": "1786",
+        "addressCountry": "CH"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 46.964962,
+        "longitude": 7.11938
+      },
+      "url": "https://pmsugiez.ch",
+      "telephone": "+41266708330",
+        "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "08:00",
+              "closes": "12:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "14:00",
+              "closes": "18:00"
+            }
+          ],
+      "priceRange": "$$",
+      "medicalSpecialty": [
+        "GeneralPractice"
+      ]
+    }
     </script>
 </head>
 <body>
-    <!-- Navigation fixe -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#accueil"><img src="logo-pmsugiez.png" alt="PM Sugiez Logo"> </a>
-                <span><a href="#accueil" style="text-decoration:none; color: black;">PM Sugiez</a></span>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#accueil" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
-                <li><a href="#equipe" class="nav-link"><i class="fas fa-user-md"></i> Équipe</a></li>
-                <li><a href="#services" class="nav-link"><i class="fas fa-briefcase-medical"></i> Services</a></li>
-                <li><a href="#horaires" class="nav-link"><i class="far fa-clock"></i> Horaires</a></li>
-                <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
-            </ul>
-            <!-- todo : encore utilisé ? pourquoi c'était là ? -->
-            <button class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+<!-- Navigation fixe -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#accueil">
+                <img src="logo-pmsugiez.png" alt="Logo du Pôle médical de Sugiez">
+            </a>
+            <span>
+                <a href="#accueil" style="text-decoration:none; color: black;">PM Sugiez</a>
+            </span>
         </div>
-    </nav>
-
-    <!-- Section Hero avec accès rapide intégré -->
-    <section id="accueil" class="hero">
-        <div class="hero-video-wrapper">
-            <img
-                src="images/outside/paysage-02.JPG"
-                alt=""
-                class="hero-fallback"
-            >
-
-            <iframe
-                class="hero-video"
-                data-src="https://www.youtube.com/embed/QlAZavtZ584?autoplay=1&mute=1&loop=1&playlist=QlAZavtZ584&showinfo=0&controls=0&autohide=1"
-                title="Background video"
-                frameborder="0"
-                allow="autoplay; fullscreen"
-                loading="lazy"
-                allowfullscreen>
-            </iframe>
-        </div>
-
-        <div class="hero-content">
-            <div class="new-patients-badge fade-in">
-                <i class="fas fa-user-plus"></i>
-                <span>Nouveaux patients acceptés</span>
-            </div>
-
-            <h1 class="fade-in">Pôle Médical de Sugiez</h1>
-
-            <div class="hero-cta fade-in">
-                <a href="https://www.onedoc.ch/fr/cabinet-medical/sugiez/ebckh/pm-sugiez-sa" target="_blank" rel="noopener noreferrer" class="btn-appointment">
-                    <span class="btn-appointment-icon">
-                        <i class="fas fa-calendar-check"></i>
-                    </span>
-                    <span class="btn-appointment-content">
-                        <span class="btn-appointment-title">Prendre rendez-vous en ligne</span>
-                        <span class="btn-appointment-subtitle">Réponse rapide • Disponibilités en temps réel</span>
-                    </span>
-                    <span class="btn-appointment-arrow">
-                        <i class="fas fa-arrow-right"></i>
-                    </span>
-                </a>
-            </div>
-
-            <!-- Accès rapide intégré dans le hero -->
-            <div class="quick-access-hero fade-in">
-                <a href="tel:+41266708330" class="quick-card-hero">
-                    <i class="fas fa-phone quick-icon"></i>
-                    <h3>026 670 83 30</h3>
-                    <p class="quick-card-label">Besoin d'aide ? Appelez-nous !</p>
-                </a>
-                <a href="#horaires" class="quick-card-hero">
-                    <i class="far fa-clock quick-icon"></i>
-                    <h3>Lun-Ven: 8h-18h</h3>
-                    <p class="quick-card-label">Horaires</p>
-                </a>
-                <a href="#contact" class="quick-card-hero">
-                    <i class="fas fa-map-marker-alt quick-icon"></i>
-                    <h3>Sugiez, Fribourg</h3>
-                    <p class="quick-card-label">Localisation</p>
-                </a>
-            </div>
-        </div>
-        <div class="scroll-indicator">
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#accueil" class="nav-link"><i class="fas fa-home"></i> Accueil</a></li>
+            <li><a href="#equipe" class="nav-link"><i class="fas fa-user-md"></i> Équipe</a></li>
+            <li><a href="#services" class="nav-link"><i class="fas fa-briefcase-medical"></i> Services</a></li>
+            <li><a href="#horaires" class="nav-link"><i class="far fa-clock"></i> Horaires</a></li>
+            <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu">
             <span></span>
-        </div>
-    </section>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
 
-    <!-- Section Équipe -->
-    <section id="equipe" class="section">
-        <div class="container">
-            <h2 class="section-title">Notre équipe</h2>
-            <p class="section-subtitle">Des professionnels dévoués à votre service</p>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-image carousel-container" id="bertrandCarousel">
-                        <div class="carousel-slides">
-                            <img src="images/staff/Bertrand_Curty-2.jpg" alt="Dr. Bertrand Curty" class="carousel-slide active" loading="lazy">
-                            <img src="images/staff/Bertrand_Curty-1.jpg" alt="Dr. Bertrand Curty" class="carousel-slide" loading="lazy">
-                        </div>
-                        <div class="carousel-dots">
-                            <button class="dot active" data-slide="0" aria-label="Photo 1"></button>
-                            <button class="dot" data-slide="1" aria-label="Photo 2"></button>
-<!--                            todo : supprimer la dernière photo ? -->
-<!--                            <button class="dot" data-slide="2" aria-label="Photo 3"></button>-->
-                        </div>
+<!-- Section Hero avec accès rapide intégré -->
+<section id="accueil" class="hero">
+    <div class="hero-video-wrapper">
+        <img
+            src="images/outside/paysage-02.JPG"
+            alt="Vue extérieur du Pôle médical de Sugiez"
+            class="hero-fallback"
+        >
+
+        <iframe
+            class="hero-video"
+            data-src="https://www.youtube.com/embed/QlAZavtZ584?autoplay=1&mute=1&loop=1&playlist=QlAZavtZ584&showinfo=0&controls=0&autohide=1"
+            title="Background video"
+            frameborder="0"
+            allow="autoplay; fullscreen"
+            loading="lazy"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <div class="hero-content">
+        <div class="new-patients-badge fade-in">
+            <i class="fas fa-user-plus"></i>
+            <span>Nouveaux patients acceptés</span>
+        </div>
+
+        <h1 class="fade-in">Pôle Médical de Sugiez</h1>
+
+        <div class="hero-cta fade-in">
+            <a href="https://www.onedoc.ch/fr/cabinet-medical/sugiez/ebckh/pm-sugiez-sa"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn-appointment">
+                <span class="btn-appointment-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </span>
+                <span class="btn-appointment-content">
+                    <span class="btn-appointment-title">Prendre rendez-vous en ligne</span>
+                    <span class="btn-appointment-subtitle">Réponse rapide • Disponibilités en temps réel</span>
+                </span>
+                <span class="btn-appointment-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </span>
+            </a>
+        </div>
+
+        <!-- Accès rapide intégré dans le hero -->
+        <div class="quick-access-hero fade-in">
+            <a href="tel:+41266708330" class="quick-card-hero">
+                <i class="fas fa-phone quick-icon"></i>
+                <h3>026 670 83 30</h3>
+                <p class="quick-card-label">Besoin d'aide ? Appelez-nous !</p>
+            </a>
+            <a href="#horaires" class="quick-card-hero">
+                <i class="far fa-clock quick-icon"></i>
+                <h3>Lun-Ven: 8h-18h</h3>
+                <p class="quick-card-label">Horaires</p>
+            </a>
+            <a href="#contact" class="quick-card-hero">
+                <i class="fas fa-map-marker-alt quick-icon"></i>
+                <h3>Sugiez, Fribourg</h3>
+                <p class="quick-card-label">Localisation</p>
+            </a>
+        </div>
+    </div>
+    <div class="scroll-indicator">
+        <span></span>
+    </div>
+</section>
+
+<!-- Section Équipe -->
+<section id="equipe" class="section">
+    <div class="container">
+        <h2 class="section-title">Notre équipe</h2>
+        <p class="section-subtitle">Des professionnels dévoués à votre service</p>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-image carousel-container" id="bertrandCarousel">
+                    <div class="carousel-slides">
+                        <img src="images/staff/Bertrand_Curty-2.jpg"
+                             alt="Dr. Bertrand Curty"
+                             class="carousel-slide active"
+                             loading="lazy">
+                        <img src="images/staff/Bertrand_Curty-1.jpg"
+                             alt="Dr. Bertrand Curty"
+                             class="carousel-slide"
+                             loading="lazy">
                     </div>
-                    <div class="team-info">
-                        <h3>Dr. Bertrand <UPPER style="text-transform: uppercase;">Curty</UPPER></h3>
-                        <p class="team-role">Médecine interne générale FMH et spécialiste en médecine du sport SSMS</p>
-<!--                            todo : supprimer la description ? si oui, check CSS stylesheet -->
-<!--                        <p class="team-description"><em>Add short description</em></p>-->
-                        <div class="team-languages">
-                            <i class="fas fa-language"></i>
-                            <span>Français, Allemand, Anglais</span>
-                        </div>
-                        <a target="_blank" rel="noopener noreferrer" class="team-appointment-btn" id="full">
-                            <i class="fas fa-calendar-xmark"></i>
-                            <em>Pas de disponibilité</em>
+                    <div class="carousel-dots">
+                        <button class="dot active" data-slide="0" aria-label="Photo 1"></button>
+                        <button class="dot" data-slide="1" aria-label="Photo 2"></button>
+                    </div>
+                </div>
+                <div class="team-info">
+                    <h3>Dr. Bertrand <span style="text-transform: uppercase;">Curty</span></h3>
+                    <p class="team-role">Médecine interne générale FMH et spécialiste en médecine du sport SSMS</p>
+                    <div class="team-languages">
+                        <i class="fas fa-language"></i>
+                        <span>Français, Allemand, Anglais</span>
+                    </div>
+                    <a target="_blank"
+                       rel="noopener noreferrer"
+                       class="team-appointment-btn"
+                       id="full">
+                        <i class="fas fa-calendar-xmark"></i>
+                        <em>Pas de disponibilité</em>
+                    </a>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-image">
+                    <img src="images/staff/Loredana-Mihaela_Ungureanu.jpg"
+                         alt="Dr. Loredana-Mihaela Ungureanu"
+                         loading="lazy">
+                </div>
+                <div class="team-info">
+                    <h3>Dr. Loredana-Mihaela <span style="text-transform: uppercase;">Ungureanu</span></h3>
+                    <p class="team-role">Médecin praticien</p>
+                    <div class="team-languages">
+                        <i class="fas fa-language"></i>
+                        <span>Français, Roumain, Anglais</span>
+                    </div>
+                    <a href="https://www.onedoc.ch/en/general-practitioner-gp/sugiez/pcwbs/dr-loredana-mihaela-ungureanu"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="team-appointment-btn">
+                        <i class="fas fa-calendar-check"></i>
+                        Prendre rendez-vous
+                    </a>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-image">
+                    <img src="images/staff/Bilyana_Filipcheva.jpg"
+                         alt="Dr. Bilyana Filipcheva"
+                         loading="lazy">
+                </div>
+                <div class="team-info">
+                    <h3>Dr. Bilyana <span style="text-transform: uppercase;">Prodanova Filipcheva</span></h3>
+                    <p class="team-role">Médecin praticien</p>
+                    <div class="team-languages">
+                        <i class="fas fa-language"></i>
+                        <span>Français, Bulgare, Anglais</span>
+                    </div>
+                    <a href="https://www.onedoc.ch/fr/medecin-generaliste/sugiez/pcwbq/dr-bilyana-prodanova-filipcheva"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="team-appointment-btn">
+                        <i class="fas fa-calendar-check"></i>
+                        Prendre rendez-vous
+                    </a>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/500px-Unknown_person.jpg"
+                         alt="Amaëlle Bader"
+                         loading="lazy">
+                </div>
+                <div class="team-info">
+                    <h3>Amaëlle <span style="text-transform: uppercase;">Bader</span></h3>
+                    <p class="team-role">Responsable de cabinet</p>
+                    <div class="team-languages">
+                        <i class="fas fa-language"></i>
+                        <span>Français</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-image">
+                    <img src="images/staff/Jessica_Curty.jpg"
+                         alt="Jessica Curty"
+                         loading="lazy">
+                </div>
+                <div class="team-info">
+                    <h3>Jessica <span style="text-transform: uppercase;">Curty</span></h3>
+                    <p class="team-role">Secrétaire médicale</p>
+                    <div class="team-languages">
+                        <i class="fas fa-language"></i>
+                        <span>Français, Allemand, Anglais</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-image">
+                    <img src="images/staff/Marina_Ferreira.jpg"
+                         alt="Marina Ferreira"
+                         loading="lazy">
+                </div>
+                <div class="team-info">
+                    <h3>Marina <span style="text-transform: uppercase;">Ferreira</span></h3>
+                    <p class="team-role">Assistante médicale</p>
+                    <div class="team-languages">
+                        <i class="fas fa-language"></i>
+                        <span>Français, Portugais</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/500px-Unknown_person.jpg"
+                         alt="Marie-Christine Guinnard"
+                         loading="lazy">
+                </div>
+                <div class="team-info">
+                    <h3>Marie-Christine <span style="text-transform: uppercase;">Guinnard</span></h3>
+                    <p class="team-role">Assistante médicale</p>
+                    <div class="team-languages">
+                        <i class="fas fa-language"></i>
+                        <span>Français, Anglais</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Section Services -->
+<section id="services" class="section section-alt">
+    <div class="container">
+        <h2 class="section-title">Nos services</h2>
+        <p class="section-subtitle">Une prise en charge complète et personnalisée</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="material-symbols-outlined service-icon">stethoscope</i>
+                <h3>Consultation générale à partir de l'âge de 5 ans</h3>
+                <p>Examens de routine, diagnostics et suivis médicaux</p>
+            </div>
+            <div class="service-card">
+                <i class="material-symbols-outlined service-icon">vaccines</i>
+                <h3>Vaccinations</h3>
+                <p>Tous types de vaccins</p>
+            </div>
+            <div class="service-card">
+                <i class="material-symbols-outlined service-icon">experiment</i>
+                <h3>Analyses</h3>
+                <p>Prélèvements sanguins et analyses de laboratoire</p>
+            </div>
+            <div class="service-card">
+                <i class="material-symbols-outlined service-icon">ambulance</i>
+                <h3>Urgences</h3>
+                <p>Prise en charge des situations urgentes</p>
+            </div>
+            <div class="service-card">
+                <i class="material-symbols-outlined service-icon">workspace_premium</i>
+                <h3>Certificat OCN</h3>
+                <p>Évaluation médicale nécessaire pour l’aptitude à la conduite.</p>
+            </div>
+            <div class="service-card">
+                <i class="material-symbols-outlined service-icon">fluid</i>
+                <h3>Perfusion</h3>
+                <p>Administration intraveineuse pour hydratation ou traitement.</p>
+            </div>
+            <div class="service-card">
+                <i class="material-symbols-outlined service-icon">ecg_heart</i>
+                <h3>ECG</h3>
+                <p>ECG 24 heures / 7 jours</p>
+            </div>
+            <div class="service-card">
+                <i class="material-symbols-outlined service-icon">blood_pressure</i>
+                <h3>MAPA</h3>
+                <p>Mesure ambulatoire de la pression artérielle sur 24 heures.</p>
+            </div>
+            <div class="service-card">
+                <i class="material-symbols-outlined service-icon">dark_mode</i>
+                <h3>Dépistage de l'apnée du sommeil</h3>
+                <p>Examen pour analyser la respiration durant le sommeil.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section Horaires -->
+<section id="horaires" class="section">
+    <div class="container">
+        <h2 class="section-title">Horaires d'ouverture</h2>
+        <div class="horaires-content">
+            <div class="horaires-card">
+                <h3><i class="far fa-calendar-alt"></i> Consultations</h3>
+                <div class="horaires-list">
+                    <div class="horaire-item">
+                        <span class="jour">Lundi - Vendredi</span>
+                        <span class="heure">8h00 - 12h00<br>14h00 - 18h00</span>
+                    </div>
+                    <div class="horaire-item closed">
+                        <span class="jour">Samedi</span>
+                        <span class="heure">Fermé</span>
+                    </div>
+                    <div class="horaire-item closed">
+                        <span class="jour">Dimanche</span>
+                        <span class="heure">Fermé</span>
+                    </div>
+                </div>
+            </div>
+            <div class="horaires-info">
+                <div class="info-box">
+                    <i class="fas fa-calendar-check" style="font-size: 32px; margin-bottom: 12px;"></i>
+                    <h4>Rendez-vous en ligne</h4>
+                    <p>Prenez rendez-vous facilement via la plateforme OneDoc</p>
+                    <a href="https://www.onedoc.ch/fr/cabinet-medical/sugiez/ebckh/pm-sugiez-sa"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="btn btn-primary">Prendre RDV</a>
+                </div>
+                <div class="info-box-secondary">
+                    <i class="fas fa-ambulance" style="font-size: 28px; margin-bottom: 12px; color: var(--primary-color);"></i>
+                    <h4>Urgences médicales</h4>
+                    <p>En cas d'urgence vitale</p>
+                    <div class="urgence-numbers-small">
+                        <a href="tel:144" class="urgence-link">
+                            <i class="fas fa-phone-alt"></i> 144 - Ambulance
                         </a>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-image">
-                        <img src="images/staff/Loredana-Mihaela_Ungureanu.jpg" alt="Dr. Loredana-Mihaela Ungureanu" loading="lazy">
-                    </div>
-                    <div class="team-info">
-                        <h3>Dr. Loredana-Mihaela <UPPER style="text-transform: uppercase;">Ungureanu</UPPER></h3>
-                        <p class="team-role">Médecin praticien</p>
-                        <div class="team-languages">
-                            <i class="fas fa-language"></i>
-                            <span>Français, Roumain, Anglais</span>
-                        </div>
-                        <a href="https://www.onedoc.ch/en/general-practitioner-gp/sugiez/pcwbs/dr-loredana-mihaela-ungureanu" target="_blank" rel="noopener noreferrer" class="team-appointment-btn">
-                            <i class="fas fa-calendar-check"></i>
-                            Prendre rendez-vous
+                        <a href="tel:145" class="urgence-link">
+                            <i class="fas fa-pills"></i> 145 - Antipoison
                         </a>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-image">
-                        <img src="images/staff/Bilyana_Filipcheva.jpg" alt="Dr. Bilyana Filipcheva" loading="lazy">
-                    </div>
-                    <div class="team-info">
-                        <h3>Dr. Bilyana <UPPER style="text-transform: uppercase;">Prodanova Filipcheva</UPPER></h3>
-                        <p class="team-role">Médecin praticien</p>
-                        <div class="team-languages">
-                            <i class="fas fa-language"></i>
-                            <span>Français, Bulgare, Anglais</span>
-                        </div>
-                        <a href="https://www.onedoc.ch/fr/medecin-generaliste/sugiez/pcwbq/dr-bilyana-prodanova-filipcheva" target="_blank" rel="noopener noreferrer" class="team-appointment-btn">
-                            <i class="fas fa-calendar-check"></i>
-                            Prendre rendez-vous
-                        </a>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/500px-Unknown_person.jpg" alt="">
-                    </div>
-                    <div class="team-info">
-                        <h3>Amaëlle <UPPER style="text-transform: uppercase;">Bader</UPPER></h3>
-                        <p class="team-role">Responsable de cabinet</p>
-                        <div class="team-languages">
-                            <i class="fas fa-language"></i>
-                            <span>Français</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-image">
-                        <img src="images/staff/Jessica_Curty.jpg" alt="Jessica Curty" loading="lazy">
-                    </div>
-                    <div class="team-info">
-                        <h3>Jessica <UPPER style="text-transform: uppercase;">Curty</UPPER></h3>
-                        <p class="team-role">Secrétaire médicale</p>
-                        <div class="team-languages">
-                            <i class="fas fa-language"></i>
-                            <span>Français, Allemand, Anglais</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-image">
-                        <img src="images/staff/Marina_Ferreira.jpg" alt="Marina Ferreira" loading="lazy">
-                    </div>
-                    <div class="team-info">
-                        <h3>Marina <UPPER style="text-transform: uppercase;">Ferreira</UPPER></h3>
-                        <p class="team-role">Assistante médicale</p>
-                        <div class="team-languages">
-                            <i class="fas fa-language"></i>
-                            <span>Français, Portugais</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/500px-Unknown_person.jpg" alt="">
-                    </div>
-                    <div class="team-info">
-                        <h3>Marie-Christine <UPPER style="text-transform: uppercase;">Guinnard</UPPER></h3>
-                        <p class="team-role">Assistante médicale</p>
-                        <div class="team-languages">
-                            <i class="fas fa-language"></i>
-                            <span>Français, Anglais</span>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Section Services -->
-    <section id="services" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">Nos services</h2>
-            <p class="section-subtitle">Une prise en charge complète et personnalisée</p>
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="material-symbols-outlined service-icon" style="font-size: 48px;">stethoscope</i>
-                    <h3>Consultation générale à partir de l'âge de 5 ans</h3>
-                    <p>Examens de routine, diagnostics et suivis médicaux</p>
-                </div>
-                <div class="service-card">
-                    <i class="material-symbols-outlined service-icon" style="font-size: 48px;">vaccines</i>
-                    <h3>Vaccinations</h3>
-                    <p>Tous types de vaccins</p>
-                </div>
-                <div class="service-card">
-                    <i class="material-symbols-outlined service-icon" style="font-size: 48px;">experiment</i>
-                    <h3>Analyses</h3>
-                    <p>Prélèvements sanguins et analyses de laboratoire</p>
-                </div>
-                <div class="service-card">
-                    <i class="material-symbols-outlined service-icon" style="font-size: 48px;">ambulance</i>
-                    <h3>Urgences</h3>
-                    <p>Prise en charge des situations urgentes</p>
-                </div>
-                <div class="service-card">
-                    <i class="material-symbols-outlined service-icon" style="font-size: 48px;">workspace_premium</i>
-                    <h3>Certificat OCN</h3>
-                    <p>Évaluation médicale nécessaire pour l’aptitude à la conduite.</p>
-                </div>
-                <div class="service-card">
-                    <i class="material-symbols-outlined service-icon" style="font-size: 48px;">fluid</i>
-                    <h3>Perfusion</h3>
-                    <p>Administration intraveineuse pour hydratation ou traitement.</p>
-                </div>
-                 <div class="service-card">
-                    <i class="material-symbols-outlined service-icon" style="font-size: 48px;">ecg_heart</i>
-                    <h3>ECG</h3>
-                    <p>ECG 24 heures / 7 jours</p>
-                </div>
-                <div class="service-card">
-                    <i class="material-symbols-outlined service-icon" style="font-size: 48px;">blood_pressure</i>
-                    <h3>MAPA</h3>
-                    <p>Mesure ambulatoire de la pression artérielle sur 24 heures.</p>
-                </div>
-                <div class="service-card">
-                    <i class="material-symbols-outlined service-icon" style="font-size: 48px;">dark_mode</i>
-                    <h3>Dépistage de l'apnée du sommeil</h3>
-                    <p>Examen pour analyser la respiration durant le sommeil.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Horaires -->
-    <section id="horaires" class="section">
-        <div class="container">
-            <h2 class="section-title">Horaires d'ouverture</h2>
-            <div class="horaires-content">
-                <div class="horaires-card">
-                    <h3><i class="far fa-calendar-alt"></i> Consultations</h3>
-                    <div class="horaires-list">
-                        <div class="horaire-item">
-                            <span class="jour">Lundi - Vendredi</span>
-                            <span class="heure">8h00 - 12h00<br>14h00 - 18h00</span>
-                        </div>
-                        <div class="horaire-item closed">
-                            <span class="jour">Samedi</span>
-                            <span class="heure">Fermé</span>
-                        </div>
-                        <div class="horaire-item closed">
-                            <span class="jour">Dimanche</span>
-                            <span class="heure">Fermé</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="horaires-info">
-                    <div class="info-box">
-                        <i class="fas fa-calendar-check" style="font-size: 32px; margin-bottom: 12px;"></i>
-                        <h4>Rendez-vous en ligne</h4>
-                        <p>Prenez rendez-vous facilement via la plateforme OneDoc</p>
-                        <a href="https://www.onedoc.ch/fr/cabinet-medical/sugiez/ebckh/pm-sugiez-sa" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Prendre RDV</a>
-                    </div>
-                    <div class="info-box-secondary">
-                        <i class="fas fa-ambulance" style="font-size: 28px; margin-bottom: 12px; color: var(--primary-color);"></i>
-                        <h4>Urgences médicales</h4>
-                        <p>En cas d'urgence vitale</p>
-                        <div class="urgence-numbers-small">
-                            <a href="tel:144" class="urgence-link">
-                                <i class="fas fa-phone-alt"></i> 144 - Ambulance
-                            </a>
-                            <a href="tel:145" class="urgence-link">
-                                <i class="fas fa-pills"></i> 145 - Antipoison
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Contact -->
-    <section id="contact" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">Nous contacter</h2>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <h3><i class="fas fa-map-marker-alt"></i> Adresse</h3>
-                        <p>Pôle Médical de Sugiez<br>
+<!-- Section Contact -->
+<section id="contact" class="section section-alt">
+    <div class="container">
+        <h2 class="section-title">Nous contacter</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Adresse</h3>
+                    <p>
+                        Pôle Médical de Sugiez<br>
                         Route du Péage 16A<br>
                         1786 Sugiez<br>
-                        Fribourg, Suisse</p>
-                    </div>
-                    <div class="contact-card">
-                        <h3><i class="fas fa-phone"></i> Téléphone</h3>
-                        <p><a href="tel:+41266708330">026 670 83 30</a></p>
-                    </div>
-                    <div class="contact-card">
-                        <h3><i class="fas fa-envelope"></i> Email</h3>
-                        <p><a href="mailto:pmsugiez@hin.ch">pmsugiez@hin.ch</a></p>
-                    </div>
-
-                    <!-- Google Maps -->
-                    <div class="map-container">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d680.7084178129998!2d7.118715928551715!3d46.964957913419646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e1340ba5118e9%3A0x5e6d17548ccaa8ba!2sPM%20Sugiez%20SA!5e0!3m2!1sen!2sch!4v1763820555510!5m2!1sen!2sch"
-                            width="100%"
-                            height="300"
-                            style="border:0;"
-                            allowfullscreen=""
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
+                        Fribourg, Suisse
+                    </p>
+                </div>
+                <div class="contact-card">
+                    <h3><i class="fas fa-phone"></i> Téléphone</h3>
+                    <p><a href="tel:+41266708330">026 670 83 30</a></p>
+                </div>
+                <div class="contact-card">
+                    <h3><i class="fas fa-envelope"></i> Email</h3>
+                    <p><a href="mailto:pmsugiez@hin.ch">pmsugiez@hin.ch</a></p>
                 </div>
 
-                <!-- Formulaire Formspree-->
-                <!-- todo : ajouter un champ date de naissance (obligatoire?) -->
-                <div class="contact-form-container">
-                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwpjlero" method="POST">
-                        <h3>Formulaire de contact</h3>
-                        <div class="form-group">
-                            <label for="name"><i class="fas fa-user"></i> Nom complet *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email"><i class="fas fa-envelope"></i> Email *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone"><i class="fas fa-phone"></i> Téléphone</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="subject"><i class="fas fa-tag"></i> Sujet *</label>
-                            <select id="subject" name="subject" required>
-                                <option value="">Sélectionnez un sujet</option>
-                                <option value="Demande d'information">Demande d'information</option>
-                                <option value="Renouvellement d'ordonnance">Renouvellement d'ordonnance</option>
-                                <option value="Récupération du dossier médical">Récupération du dossier médical</option>
-                                <option value="Autre">Autre</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message"><i class="fas fa-comment"></i> Message *</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">
-                            <i class="fas fa-paper-plane"></i> Envoyer le message
-                        </button>
-                    </form>
+                <!-- Google Maps -->
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d680.7084178129998!2d7.118715928551715!3d46.964957913419646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e1340ba5118e9%3A0x5e6d17548ccaa8ba!2sPM%20Sugiez%20SA!5e0!3m2!1sen!2sch!4v1763820555510!5m2!1sen!2sch"
+                        width="100%"
+                        height="300"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
+            </div>
+
+            <!-- Formulaire Formspree-->
+            <div class="contact-form-container">
+                <form class="contact-form"
+                      id="contactForm"
+                      action="https://formspree.io/f/xwpjlero"
+                      method="POST">
+                    <h3>Formulaire de contact</h3>
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> Nom complet *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone"><i class="fas fa-phone"></i> Téléphone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject"><i class="fas fa-tag"></i> Sujet *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Sélectionnez un sujet</option>
+                            <option value="Demande d'information">Demande d'information</option>
+                            <option value="Renouvellement d'ordonnance">Renouvellement d'ordonnance</option>
+                            <option value="Récupération du dossier médical">Récupération du dossier médical</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message"><i class="fas fa-comment"></i> Message *</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fas fa-paper-plane"></i> Envoyer le message
+                    </button>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="logo-pmsugiez.png" alt="PM Sugiez">
-                    <p>PM Sugiez</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="#accueil"><i class="fas fa-home"></i> Accueil</a></li>
-                        <li><a href="#equipe"><i class="fas fa-user-md"></i> Équipe</a></li>
-                        <li><a href="#services"><i class="fas fa-briefcase-medical"></i> Services</a></li>
-                        <li><a href="#horaires"><i class="far fa-clock"></i> Horaires</a></li>
-                        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact rapide</h4>
-                    <p><i class="fas fa-phone"></i> <a href="tel:+41266708330">026 670 83 30</a></p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:pmsugiez@hin.ch">pmsugiez@hin.ch</a></p>
-                </div>
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo-pmsugiez.png" alt="Logo du Pôle Médical de Sugiez">
+                <p>PM Sugiez</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Pôle Médical de Sugiez. Tous droits réservés.</p>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#accueil"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="#equipe"><i class="fas fa-user-md"></i> Équipe</a></li>
+                    <li><a href="#services"><i class="fas fa-briefcase-medical"></i> Services</a></li>
+                    <li><a href="#horaires"><i class="far fa-clock"></i> Horaires</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact rapide</h4>
+                <p><i class="fas fa-phone"></i> <a href="tel:+41266708330">026 670 83 30</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:pmsugiez@hin.ch">pmsugiez@hin.ch</a></p>
             </div>
         </div>
-    </footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pôle Médical de Sugiez. Tous droits réservés.</p>
+        </div>
+    </div>
+</footer>
 
-    <script src="script.js" defer></script>
+<script src="script.js" defer></script>
 </body>
 </html>

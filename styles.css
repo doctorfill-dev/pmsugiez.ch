@@ -114,6 +114,12 @@ body {
     color: var(--primary-color);
 }
 
+/* lien actif (mis à jour en JS) */
+.nav-link.active {
+    background: var(--background-alt);
+    color: var(--primary-color);
+}
+
 .urgence-btn {
     background: var(--primary-color);
     color: white !important;
@@ -200,11 +206,10 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 0;
-    display: none; /* comme ton style actuel */
+    z-index: 1;
+    display: none;
 }
 
-/* todo === todo */
 .hero-content {
     max-width: 900px;
     position: relative;
@@ -230,8 +235,6 @@ body {
     font-size: 18px;
 }
 
-/* Pas d'animation de pulsation pour rester épuré */
-
 .hero h1 {
     font-size: clamp(48px, 8vw, 72px);
     font-weight: 700;
@@ -250,7 +253,7 @@ body {
 }
 
 /* ============================================
-   BOUTON DE RENDEZ-VOUS PRINCIPAL - UX Optimisée
+   BOUTON DE RENDEZ-VOUS PRINCIPAL
    ============================================ */
 .btn-appointment {
     display: inline-flex;
@@ -269,7 +272,6 @@ body {
     margin: 0 auto 16px;
 }
 
-/* Effet de brillance subtil au survol */
 .btn-appointment::before {
     content: '';
     position: absolute;
@@ -319,14 +321,12 @@ body {
 .btn-appointment-title {
     font-size: 20px;
     font-weight: 600;
-    display: block;
 }
 
 .btn-appointment-subtitle {
     font-size: 13px;
     font-weight: 400;
     opacity: 0.9;
-    display: block;
 }
 
 .btn-appointment-arrow {
@@ -341,32 +341,8 @@ body {
     transform: translateX(4px);
 }
 
-/* Message d'aide sous le bouton */
-.hero-cta-help {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.9);
-    margin-top: 16px;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-}
-
-.hero-cta-help i {
-    color: var(--primary-color);
-    margin-right: 6px;
-}
-
-.hero-cta-help a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: var(--transition);
-}
-
-.hero-cta-help a:hover {
-    text-decoration: underline;
-}
-
 /* ============================================
-   QUICK ACCESS HERO - Version simplifiée
+   QUICK ACCESS HERO
    ============================================ */
 .quick-access-hero {
     display: flex;
@@ -393,7 +369,6 @@ body {
     overflow: hidden;
 }
 
-/* Effet de brillance pour indiquer l'interactivité */
 .quick-card-hero::before {
     content: '';
     position: absolute;
@@ -409,7 +384,6 @@ body {
     left: 100%;
 }
 
-/* Badge "Cliquer" qui apparaît au survol */
 .quick-card-hero::after {
     content: 'Cliquez';
     position: absolute;
@@ -432,7 +406,6 @@ body {
     transform: translateY(0);
 }
 
-/* Animation pulsation subtile pour attirer l'attention */
 @keyframes subtle-pulse {
     0%, 100% {
         box-shadow: 0 4px 16px rgba(0, 122, 255, 0.2);
@@ -453,7 +426,6 @@ body {
     animation: none;
 }
 
-/* Effet au clic pour feedback */
 .quick-card-hero:active {
     transform: translateY(-2px) scale(0.98);
     box-shadow: 0 4px 16px rgba(0, 122, 255, 0.25);
@@ -489,71 +461,10 @@ body {
     font-size: 13px;
     color: var(--text-secondary);
     margin: 0;
-    transition: var(--transition);
-}
-
-.quick-card-hero:hover h3 {
-    color: var(--primary-color);
-    transform: scale(1.05);
-}
-
-/* Style spécifique mobile pour indiquer le tap */
-@media (max-width: 768px) {
-    /* Image verticale pour mobile */
-    .hero {
-        background-image: url('images/outside/vertical-01.JPG');
-        background-attachment: scroll;
-    }
-
-    .quick-card-hero {
-        padding: 28px 36px;
-        box-shadow: 0 6px 20px rgba(0, 122, 255, 0.25);
-        border-width: 2.5px;
-    }
-
-    /* Message permanent sur mobile */
-    .quick-card-hero::after {
-        content: 'Cliquez';
-        opacity: 0.85;
-        transform: translateY(0);
-        font-size: 10px;
-        padding: 3px 8px;
-    }
-
-    .quick-card-hero .quick-icon {
-        font-size: 40px;
-    }
-
-    .quick-card-hero h3 {
-        font-size: 18px;
-        font-weight: 600;
-    }
-
-    /* Animation plus prononcée sur mobile */
-    @keyframes mobile-pulse {
-        0%, 100% {
-            transform: scale(1);
-            box-shadow: 0 6px 20px rgba(0, 122, 255, 0.25);
-        }
-        50% {
-            transform: scale(1.02);
-            box-shadow: 0 8px 24px rgba(0, 122, 255, 0.4);
-        }
-    }
-
-    .quick-card-hero {
-        animation: mobile-pulse 2.5s ease-in-out infinite;
-    }
-
-    /* Feedback tactile au tap */
-    .quick-card-hero:active {
-        transform: scale(0.95);
-        box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
-    }
 }
 
 /* ============================================
-   BUTTONS - Style Apple
+   BUTTONS
    ============================================ */
 .btn {
     display: inline-block;
@@ -707,9 +618,7 @@ body {
     transform: scale(1.05);
 }
 
-/* ============================================
-   STYLES CARROUSEL - DÉFILEMENT AUTOMATIQUE
-   ============================================ */
+/* CARROUSEL */
 .carousel-container {
     position: relative;
     width: 100%;
@@ -770,7 +679,6 @@ body {
     background: rgba(255, 255, 255, 1);
     transform: scale(1.2);
 }
-
 
 .team-info {
     padding: 32px;
@@ -876,7 +784,7 @@ body {
 }
 
 .service-icon {
-    font-size: 48px;
+    font-size: 48px !important;
     margin-bottom: 20px;
     color: var(--primary-color);
 }
@@ -893,7 +801,7 @@ body {
 }
 
 /* ============================================
-   HORAIRES SECTION - CORRECTED
+   HORAIRES SECTION
    ============================================ */
 .horaires-content {
     display: grid;
@@ -984,7 +892,7 @@ body {
 }
 
 /* ============================================
-   URGENCES - VERSION SOBRE
+   URGENCES
    ============================================ */
 .info-box-secondary {
     background: var(--background-alt);
@@ -1181,7 +1089,6 @@ body {
 .footer-logo img {
     height: 40px;
     margin-bottom: 16px;
-    /*filter: brightness(0) invert(1);*/
 }
 
 .footer-logo p {
@@ -1290,13 +1197,14 @@ body {
         display: flex;
     }
 
-    /* Optimisation du hero pour mobile - tout sur un écran */
     .hero {
         padding: 80px 16px 20px;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        background-image: url('images/outside/vertical-01.JPG');
+        background-attachment: scroll;
     }
 
     .hero-content {
@@ -1306,12 +1214,6 @@ body {
     .hero h1 {
         display: none;
     }
-
-    /*.hero h1 {*/
-    /*    font-size: 32px;*/
-    /*    margin-bottom: 12px;*/
-    /*    line-height: 1.2;*/
-    /*}*/
 
     .hero-subtitle {
         font-size: 16px;
@@ -1354,7 +1256,6 @@ body {
         font-weight: 600;
     }
 
-    /* Réduire l'indicateur de scroll */
     .scroll-indicator {
         display: none;
     }
@@ -1410,20 +1311,16 @@ body {
     }
 }
 
-/* Media query supplémentaire pour les très petits écrans */
+/* Très petits écrans */
 @media (max-width: 480px) {
     .hero {
         padding: 70px 12px 16px;
+        background-image: url('images/outside/vertical-02.JPG');
     }
 
-    /*.hero h1 {*/
-    /*    font-size: 28px;*/
-    /*    margin-bottom: 10px;*/
-    /*}*/
     .hero h1 {
         display: none;
     }
-
 
     .hero-subtitle {
         font-size: 14px;
@@ -1458,7 +1355,6 @@ body {
         font-size: 14px;
     }
 
-    /* Réduire la hauteur de la navbar */
     .nav-container {
         height: 56px;
     }
@@ -1472,27 +1368,14 @@ body {
     }
 }
 
-/* ============================================
-   RESPONSIVE - Petit mobile (moins de 480px)
-   ============================================ */
-@media (max-width: 480px) {
-    .hero {
-        background-image: url('images/outside/vertical-02.JPG');
-    }
-}
-
-/* ============================================
-   RESPONSIVE - Tablettes (768px à 1024px)
-   ============================================ */
+/* Tablettes */
 @media (min-width: 769px) and (max-width: 1024px) {
     .hero {
         background-image: url('images/outside/paysage-02.JPG');
     }
 }
 
-/* ============================================
-   RESPONSIVE - Grands écrans (1025px et +)
-   ============================================ */
+/* Grands écrans */
 @media (min-width: 1025px) {
     .hero {
         background-image: none;
