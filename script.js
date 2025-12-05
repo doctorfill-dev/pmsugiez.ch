@@ -40,15 +40,17 @@ if (navToggle && navMenu) {
 // ============================================
 // NAVBAR SCROLL EFFECT
 // ============================================
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
+if (navbar) {
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
 
-    if (currentScroll > 100) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
+        if (currentScroll > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+}
 
 // ============================================
 // SMOOTH SCROLL POUR LES ANCRES
@@ -95,6 +97,7 @@ function highlightNavigation() {
 }
 
 window.addEventListener('scroll', highlightNavigation);
+document.addEventListener('DOMContentLoaded', highlightNavigation);
 
 // ============================================
 // MAJ DATE DU FOOTER
@@ -108,12 +111,34 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ============================================
+// VIDÉO DE FOND
+// ============================================
+function updateHeroVideo() {
+    const heroVideo = document.querySelector('.hero-video');
+    if (!heroVideo) return;
+
+    if (window.innerWidth >= 1025) {
+        if (!heroVideo.src) {
+            heroVideo.src = heroVideo.dataset.src;
+        }
+    } else {
+        // Optionnel : décharger la vidéo en dessous de 1025px
+        if (heroVideo.src) {
+            heroVideo.src = '';
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', updateHeroVideo);
+
+// ============================================
 // GESTION DU REDIMENSIONNEMENT
 // ============================================
 let resizeTimer;
 window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
+        // Fermer le menu mobile si on passe en desktop
         if (window.innerWidth > 768 && navMenu && navMenu.classList.contains('active')) {
             navMenu.classList.remove('active');
             if (navToggle) {
@@ -123,6 +148,9 @@ window.addEventListener('resize', () => {
                 spans[2].style.transform = 'none';
             }
         }
+
+        // Mettre à jour la vidéo de fond
+        updateHeroVideo();
     }, 250);
 });
 
@@ -174,12 +202,15 @@ class PhotoCarousel {
     }
 
     init() {
+        // Clic sur les points
         this.dots.forEach((dot, index) => {
             dot.addEventListener('click', () => this.goToSlide(index));
         });
 
+        // Autoplay
         this.startAutoplay();
 
+        // Pause au survol
         this.container.addEventListener('mouseenter', () => this.pauseAutoplay());
         this.container.addEventListener('mouseleave', () => this.startAutoplay());
     }
@@ -226,32 +257,4 @@ class PhotoCarousel {
 
 document.addEventListener('DOMContentLoaded', () => {
     new PhotoCarousel('bertrandCarousel');
-});
-
-// ============================================
-// VIDÉO DE FOND
-// ============================================
-function updateHeroVideo() {
-    const heroVideo = document.querySelector('.hero-video');
-    if (!heroVideo) return;
-
-    if (window.innerWidth >= 1025) {
-        if (!heroVideo.src) {
-            heroVideo.src = heroVideo.dataset.src;
-        }
-    } else {
-        // Optionnel : décharger la vidéo en dessous de 1025px
-        if (heroVideo.src) {
-            heroVideo.src = '';
-        }
-    }
-}
-
-document.addEventListener('DOMContentLoaded', updateHeroVideo);
-
-window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-        updateHeroVideo();
-    }, 250);
 });
