@@ -1209,7 +1209,7 @@ body {
 /* Tablettes */
 @media (min-width: 769px) and (max-width: 1024px) {
     .hero {
-        background-image: url('images/outside/paysage-02.JPG');
+        background-image: url('images/outside/paysage-02.avif');
         background-size: cover;
         background-position: center;
     }
