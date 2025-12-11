@@ -100,20 +100,28 @@
         <!-- Section Hero avec accès rapide intégré -->
         <section id="accueil" class="hero">
             <div class="hero-video-wrapper">
+                <!-- Image de fallback ultra légère -->
                 <img
                     src="images/outside/paysage-02.avif"
                     alt=""
                     class="hero-fallback"
                 >
 
-                <iframe
+                <!-- Vidéo locale en arrière-plan -->
+                <video
                     class="hero-video"
-                    data-src="https://www.youtube-nocookie.com/embed/QlAZavtZ584?autoplay=1&mute=1&loop=1&playlist=QlAZavtZ584&controls=0"
-                    title="Vidéo d'arrière plan"
-                    allow="autoplay; fullscreen"
-                    loading="lazy"
-                    allowfullscreen>
-                </iframe>
+                    playsinline
+                    muted
+                    loop
+                    preload="metadata"
+                    poster="images/outside/paysage-02.avif"
+                >
+                    <source
+                        data-src="images/outside/POI-2-crop.mp4"
+                        type="video/mp4"
+                        src="images/outside/POI-2-crop.mp4">
+                    Votre navigateur ne supporte pas la vidéo HTML5.
+                </video>
             </div>
 
             <div class="hero-content">

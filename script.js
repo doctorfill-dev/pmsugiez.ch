@@ -113,18 +113,39 @@ document.addEventListener('DOMContentLoaded', () => {
 // ============================================
 // VIDÉO DE FOND
 // ============================================
+// ============================================
+// VIDÉO DE FOND
+// ============================================
 function updateHeroVideo() {
-    const heroVideo = document.querySelector('.hero-video');
-    if (!heroVideo) return;
+    const video = document.querySelector('.hero-video');
+    if (!video) return;
 
-    if (window.innerWidth >= 1025) {
-        if (!heroVideo.src) {
-            heroVideo.src = heroVideo.dataset.src;
+    const source = video.querySelector('source');
+    if (!source) return;
+
+    const isDesktop = window.innerWidth >= 1025;
+
+    if (isDesktop) {
+        // Lazy-load : on ne met la vraie source que sur desktop
+        if (!source.src) {
+            const dataSrc = source.dataset.src;
+            if (dataSrc) {
+                source.src = dataSrc;
+                video.load();
+            }
         }
+
+        // Lancer la lecture (muted + playsinline → autoplay ok)
+        video.play().catch(() => {
+            // Si l’autoplay échoue, on ne casse rien
+        });
     } else {
-        // Optionnel : décharger la vidéo en dessous de 1025px
-        if (heroVideo.src) {
-            heroVideo.src = '';
+        // Mobile / tablette : on arrête tout pour les perfs
+        video.pause();
+
+        if (source.src) {
+            source.removeAttribute('src');
+            video.load(); // libère le buffer
         }
     }
 }
